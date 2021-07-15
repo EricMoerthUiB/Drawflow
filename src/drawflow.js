@@ -323,7 +323,7 @@ export default class Drawflow {
                     }
                 }
                 var x = e.clientX + 50;
-                var y = e.clientY - 20 - (40 * k);
+                var y = e.clientY  - (37 * k);
                 switch (this.ele_selected.children[0].classList[1]) {
                     case "fa-image":
                         addNodeToDrawFlow("image", x, y);
@@ -342,6 +342,9 @@ export default class Drawflow {
                         break;
                     case "fa-share-alt":
                         addNodeToDrawFlow("decision", x, y);
+                        break;
+                    case "fa-stop-circle":
+                        addNodeToDrawFlow("stop", x, y);
                         break;
                 }
                 // Connect the two nodes
@@ -633,12 +636,16 @@ export default class Drawflow {
                 var decision = document.createElement('div');
                 decision.classList.add("drawflow-contextMenu-Item");
                 decision.innerHTML = "<i class=\"fas fa-share-alt\"/>";
+                var stop = document.createElement('div');
+                stop.classList.add("drawflow-contextMenu-Item");
+                stop.innerHTML = "<i class=\"fas fa-stop-circle\"/>";
                 contextMenu.appendChild(image);
                 contextMenu.appendChild(video);
                 contextMenu.appendChild(text);
                 contextMenu.appendChild(map);
                 contextMenu.appendChild(threeD);
                 contextMenu.appendChild(decision);
+                contextMenu.appendChild(stop);
                 if (this.node_selected) {
                     this.node_selected.appendChild(contextMenu);
                 }
