@@ -195,10 +195,12 @@ export default class Drawflow {
             if (e.button === 0) {
                 this.contextmenuDel();
             }
-
             if (e.target.closest(".drawflow_content_node") != null) {
                 this.ele_selected = e.target.closest(".drawflow_content_node").parentElement.parentElement;
             }
+        }
+        if (this.ele_selected.classList[0] === "fas") {// for Icon buttons
+            this.ele_selected = this.ele_selected.parentElement;
         }
         switch (this.ele_selected.classList[0]) {
             case 'drawflow-node':
@@ -233,20 +235,6 @@ export default class Drawflow {
                 this.node_selected.classList.add("selected");
                 break;
             case 'outputTop':
-                if (this.node_selected != null) {
-                    this.node_selected.classList.remove("selected");
-                    this.node_selected = null;
-                    this.dispatch('nodeUnselected', true);
-                }
-                if (this.connection_selected != null) {
-                    this.connection_selected.classList.remove("selected");
-                    this.removeReouteConnectionSelected();
-                    this.connection_selected = null;
-                }
-                this.connection = true;
-                this.node_selected.classList.add("selected");
-                this.drawConnection(e.target);
-                break;
             case 'output':
                 this.connection = true;
                 this.node_selected = this.ele_selected;
@@ -313,11 +301,9 @@ export default class Drawflow {
                 if (this.node_selected) {
                     this.removeNodeId(this.node_selected.id);
                 }
-
                 if (this.connection_selected) {
                     this.removeConnection();
                 }
-
                 if (this.node_selected != null) {
                     this.node_selected.classList.remove("selected");
                     this.node_selected = null;
@@ -328,7 +314,42 @@ export default class Drawflow {
                     this.removeReouteConnectionSelected();
                     this.connection_selected = null;
                 }
+                break;
+            case 'drawflow-contextMenu-Item':
+                let k = 0;
+                for (let z = 0; z < this.ele_selected.parentElement.children.length; z++) {
+                    if (this.ele_selected.parentElement.children[z].children[0] === this.ele_selected.children[0]) {
+                        k = z;
+                    }
+                }
+                var x = e.clientX + 50;
+                var y = e.clientY - 20 - (2*20*k-1);
 
+                console.log(this.ele_selected.children[0].classList[1]);
+                var node;
+                switch (this.ele_selected.children[0].classList[1]) {
+                    case "fa-image":
+                        node = addNodeToDrawFlow("image", x, y);
+                        break;
+                    case "fa-paragraph":
+                        node = addNodeToDrawFlow("text", x, y);
+                        break;
+                    case "fa-video":
+                        node = addNodeToDrawFlow("video", x, y);
+                        break;
+                    case "fa-map-marked-alt":
+                        node = addNodeToDrawFlow("map", x, y);
+                        break;
+                    case "fa-cubes":
+                        node = addNodeToDrawFlow("volvis", x, y);
+                        break;
+                    case "fa-share-alt":
+                        node = addNodeToDrawFlow("decision", x, y);
+                        break;
+                }
+                break;
+            case 'drawflow-contextMenuSub-Item':
+                // console.log(this.ele_selected.children[0]);
                 break;
             default:
         }
@@ -555,7 +576,6 @@ export default class Drawflow {
     }
 
     contextmenu(e) {
-        console.log(e.target)
         this.dispatch('contextmenu', e);
         e.preventDefault();
         if (this.editor_mode === 'fixed' || this.editor_mode === 'view') {
@@ -578,7 +598,7 @@ export default class Drawflow {
                 image.innerHTML = "<i class=\"fas fa-image\"/>";
                 var video = document.createElement('div');
                 video.classList.add("drawflow-contextMenu-Item");
-                video.innerHTML = "<i class=\"fas fa-video\"/>";
+                video.innerHTML = "<i class=\"fas fa-video\">";
                 var text = document.createElement('div');
                 text.classList.add("drawflow-contextMenu-Item");
                 text.innerHTML = "<i class=\"fas fa-paragraph\"/>";
@@ -588,11 +608,15 @@ export default class Drawflow {
                 var threeD = document.createElement('div');
                 threeD.classList.add("drawflow-contextMenu-Item");
                 threeD.innerHTML = "<i class=\"fas fa-cubes\"/>";
+                var decision = document.createElement('div');
+                decision.classList.add("drawflow-contextMenu-Item");
+                decision.innerHTML = "<i class=\"fas fa-share-alt\"/>";
                 contextMenu.appendChild(image);
                 contextMenu.appendChild(video);
                 contextMenu.appendChild(text);
                 contextMenu.appendChild(map);
                 contextMenu.appendChild(threeD);
+                contextMenu.appendChild(decision);
                 if (this.node_selected) {
                     this.node_selected.appendChild(contextMenu);
                 }
@@ -601,7 +625,7 @@ export default class Drawflow {
                     contextMenu.style.left = e.clientX * (this.precanvas.clientWidth / (this.precanvas.clientWidth * this.zoom)) - (this.precanvas.getBoundingClientRect().x * (this.precanvas.clientWidth / (this.precanvas.clientWidth * this.zoom))) + "px";
                     this.precanvas.appendChild(contextMenu);
                 }
-            }else if(e.target.classList[0] === "inputBottom"){
+            } else if (e.target.classList[0] === "inputBottom") {
                 var contextMenu = document.createElement('div');
                 contextMenu.classList.add("drawflow-contextMenuSub");
                 var image = document.createElement('div');
@@ -612,8 +636,8 @@ export default class Drawflow {
                 video.classList.add("drawflow-contextMenuSub-Item");
                 video.innerHTML = "<i class=\"fas fa-video\"/>";
                 var subtext = document.createElement('div');
-                subtext .classList.add("drawflow-contextMenuSub-Item");
-                subtext .innerHTML = "<i class=\"fas fa-paragraph\"/>";
+                subtext.classList.add("drawflow-contextMenuSub-Item");
+                subtext.innerHTML = "<i class=\"fas fa-paragraph\"/>";
                 contextMenu.appendChild(image);
                 contextMenu.appendChild(video);
                 contextMenu.appendChild(subtext);
@@ -626,7 +650,7 @@ export default class Drawflow {
                     this.precanvas.appendChild(contextMenu);
                 }
 
-            }else {
+            } else {
                 var deletebox = document.createElement('div');
                 deletebox.classList.add("drawflow-delete");
                 deletebox.innerHTML = "x";
@@ -1231,7 +1255,6 @@ export default class Drawflow {
         }
 
         if (this.reroute_fix_curvature) {
-            //console.log(position_add_array_point)
             if (position_add_array_point > 0) {
                 this.drawflow.drawflow[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points.splice(position_add_array_point, 0, {
                     pos_x: pos_x,
@@ -1498,7 +1521,6 @@ export default class Drawflow {
                 var connection = document.createElementNS('http://www.w3.org/2000/svg', "svg");
                 var path = document.createElementNS('http://www.w3.org/2000/svg', "path");
                 path.classList.add("main-path");
-                // console.log(dataNode.inputs[input_item].type );
                 if (dataNode.inputs[input_item].type === "inBottom") {
                     path.classList.add("sub-path");
                 }
@@ -1949,7 +1971,6 @@ export default class Drawflow {
         if (this.connection_selected != null) {
             var listclass = this.connection_selected.parentElement.classList;
             this.connection_selected.parentElement.remove();
-            //console.log(listclass);
             var index_out = this.drawflow.drawflow[this.module].data[listclass[2].slice(14)].outputs[listclass[3]].connections.findIndex(function (item, i) {
                 return item.node === listclass[1].slice(13) && item.output === listclass[4]
             });
