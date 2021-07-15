@@ -228,9 +228,11 @@ export default class Drawflow {
                     }
                 }
                 break;
+            case 'inputBottom':
+                this.node_selected = this.ele_selected;
+                this.node_selected.classList.add("selected");
+                break;
             case 'outputTop':
-            case 'output':
-                this.connection = true;
                 if (this.node_selected != null) {
                     this.node_selected.classList.remove("selected");
                     this.node_selected = null;
@@ -241,6 +243,14 @@ export default class Drawflow {
                     this.removeReouteConnectionSelected();
                     this.connection_selected = null;
                 }
+                this.connection = true;
+                this.node_selected.classList.add("selected");
+                this.drawConnection(e.target);
+                break;
+            case 'output':
+                this.connection = true;
+                this.node_selected = this.ele_selected;
+                this.node_selected.classList.add("selected");
                 this.drawConnection(e.target);
                 break;
             case 'parent-drawflow':
@@ -545,6 +555,7 @@ export default class Drawflow {
     }
 
     contextmenu(e) {
+        console.log(e.target)
         this.dispatch('contextmenu', e);
         e.preventDefault();
         if (this.editor_mode === 'fixed' || this.editor_mode === 'view') {
@@ -553,23 +564,81 @@ export default class Drawflow {
         if (this.precanvas.getElementsByClassName("drawflow-delete").length) {
             this.precanvas.getElementsByClassName("drawflow-delete")[0].remove()
         }
-        ;
+        if (this.precanvas.getElementsByClassName("drawflow-contextMenu").length) {
+            this.precanvas.getElementsByClassName("drawflow-contextMenu")[0].remove()
+        }
+
         if (this.node_selected || this.connection_selected) {
-            var deletebox = document.createElement('div');
-            deletebox.classList.add("drawflow-delete");
-            deletebox.innerHTML = "x";
-            if (this.node_selected) {
-                this.node_selected.appendChild(deletebox);
 
+            if (e.target.classList[0] === "output") {
+                var contextMenu = document.createElement('div');
+                contextMenu.classList.add("drawflow-contextMenu");
+                var image = document.createElement('div');
+                image.classList.add("drawflow-contextMenu-Item");
+                image.innerHTML = "<i class=\"fas fa-image\"/>";
+                var video = document.createElement('div');
+                video.classList.add("drawflow-contextMenu-Item");
+                video.innerHTML = "<i class=\"fas fa-video\"/>";
+                var text = document.createElement('div');
+                text.classList.add("drawflow-contextMenu-Item");
+                text.innerHTML = "<i class=\"fas fa-paragraph\"/>";
+                var map = document.createElement('div');
+                map.classList.add("drawflow-contextMenu-Item");
+                map.innerHTML = "<i class=\"fas fa-map-marked-alt\"/>";
+                var threeD = document.createElement('div');
+                threeD.classList.add("drawflow-contextMenu-Item");
+                threeD.innerHTML = "<i class=\"fas fa-cubes\"/>";
+                contextMenu.appendChild(image);
+                contextMenu.appendChild(video);
+                contextMenu.appendChild(text);
+                contextMenu.appendChild(map);
+                contextMenu.appendChild(threeD);
+                if (this.node_selected) {
+                    this.node_selected.appendChild(contextMenu);
+                }
+                if (this.connection_selected) {
+                    contextMenu.style.top = e.clientY * (this.precanvas.clientHeight / (this.precanvas.clientHeight * this.zoom)) - (this.precanvas.getBoundingClientRect().y * (this.precanvas.clientHeight / (this.precanvas.clientHeight * this.zoom))) + "px";
+                    contextMenu.style.left = e.clientX * (this.precanvas.clientWidth / (this.precanvas.clientWidth * this.zoom)) - (this.precanvas.getBoundingClientRect().x * (this.precanvas.clientWidth / (this.precanvas.clientWidth * this.zoom))) + "px";
+                    this.precanvas.appendChild(contextMenu);
+                }
+            }else if(e.target.classList[0] === "inputBottom"){
+                var contextMenu = document.createElement('div');
+                contextMenu.classList.add("drawflow-contextMenuSub");
+                var image = document.createElement('div');
+                image.classList.add("drawflow-contextMenuSub-Item");
+                image.classList.add("first");
+                image.innerHTML = "<i class=\"fas fa-image\"/>";
+                var video = document.createElement('div');
+                video.classList.add("drawflow-contextMenuSub-Item");
+                video.innerHTML = "<i class=\"fas fa-video\"/>";
+                var subtext = document.createElement('div');
+                subtext .classList.add("drawflow-contextMenuSub-Item");
+                subtext .innerHTML = "<i class=\"fas fa-paragraph\"/>";
+                contextMenu.appendChild(image);
+                contextMenu.appendChild(video);
+                contextMenu.appendChild(subtext);
+                if (this.node_selected) {
+                    this.node_selected.appendChild(contextMenu);
+                }
+                if (this.connection_selected) {
+                    contextMenu.style.top = e.clientY * (this.precanvas.clientHeight / (this.precanvas.clientHeight * this.zoom)) - (this.precanvas.getBoundingClientRect().y * (this.precanvas.clientHeight / (this.precanvas.clientHeight * this.zoom))) + "px";
+                    contextMenu.style.left = e.clientX * (this.precanvas.clientWidth / (this.precanvas.clientWidth * this.zoom)) - (this.precanvas.getBoundingClientRect().x * (this.precanvas.clientWidth / (this.precanvas.clientWidth * this.zoom))) + "px";
+                    this.precanvas.appendChild(contextMenu);
+                }
+
+            }else {
+                var deletebox = document.createElement('div');
+                deletebox.classList.add("drawflow-delete");
+                deletebox.innerHTML = "x";
+                if (this.node_selected) {
+                    this.node_selected.appendChild(deletebox);
+                }
+                if (this.connection_selected) {
+                    deletebox.style.top = e.clientY * (this.precanvas.clientHeight / (this.precanvas.clientHeight * this.zoom)) - (this.precanvas.getBoundingClientRect().y * (this.precanvas.clientHeight / (this.precanvas.clientHeight * this.zoom))) + "px";
+                    deletebox.style.left = e.clientX * (this.precanvas.clientWidth / (this.precanvas.clientWidth * this.zoom)) - (this.precanvas.getBoundingClientRect().x * (this.precanvas.clientWidth / (this.precanvas.clientWidth * this.zoom))) + "px";
+                    this.precanvas.appendChild(deletebox);
+                }
             }
-            if (this.connection_selected) {
-                deletebox.style.top = e.clientY * (this.precanvas.clientHeight / (this.precanvas.clientHeight * this.zoom)) - (this.precanvas.getBoundingClientRect().y * (this.precanvas.clientHeight / (this.precanvas.clientHeight * this.zoom))) + "px";
-                deletebox.style.left = e.clientX * (this.precanvas.clientWidth / (this.precanvas.clientWidth * this.zoom)) - (this.precanvas.getBoundingClientRect().x * (this.precanvas.clientWidth / (this.precanvas.clientWidth * this.zoom))) + "px";
-
-                this.precanvas.appendChild(deletebox);
-
-            }
-
         }
 
     }
@@ -578,7 +647,13 @@ export default class Drawflow {
         if (this.precanvas.getElementsByClassName("drawflow-delete").length) {
             this.precanvas.getElementsByClassName("drawflow-delete")[0].remove()
         }
-        ;
+        if (this.precanvas.getElementsByClassName("drawflow-contextMenu").length) {
+            this.precanvas.getElementsByClassName("drawflow-contextMenu")[0].remove()
+        }
+        if (this.precanvas.getElementsByClassName("drawflow-contextMenuSub").length) {
+            this.precanvas.getElementsByClassName("drawflow-contextMenuSub")[0].remove()
+        }
+
     }
 
     key(e) {
@@ -694,7 +769,7 @@ export default class Drawflow {
         this.connection_ele = connection;
         var path = document.createElementNS('http://www.w3.org/2000/svg', "path");
         path.classList.add("main-path");
-        if(ele.classList[0] === "outputTop"){
+        if (ele.classList[0] === "outputTop") {
             path.classList.add("sub-path");
         }
         path.setAttributeNS(null, 'd', '');
@@ -1424,7 +1499,7 @@ export default class Drawflow {
                 var path = document.createElementNS('http://www.w3.org/2000/svg', "path");
                 path.classList.add("main-path");
                 // console.log(dataNode.inputs[input_item].type );
-                if(dataNode.inputs[input_item].type === "inBottom"){
+                if (dataNode.inputs[input_item].type === "inBottom") {
                     path.classList.add("sub-path");
                 }
                 path.setAttributeNS(null, 'd', '');

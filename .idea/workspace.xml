@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d843818a-fed0-41e4-a573-e4b523498a5f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/dist/drawflow.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/drawflow.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/drawflow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawflow.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -31,10 +32,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/drawflow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="1292" column="43" selection-start-line="1292" selection-start-column="43" selection-end-line="1292" selection-end-column="43" />
+            <state relative-caret-position="180">
+              <caret line="652" column="74" selection-start-line="652" selection-start-column="74" selection-end-line="652" selection-end-column="74" />
               <folding>
-                <element signature="n#!!block;n#dragEnd#0;n#Drawflow#0;n#!!top" />
                 <element signature="e#16060#16488#0" />
                 <element signature="n#!!block;n#addConnection#0;n#Drawflow#0;n#!!top" />
               </folding>
@@ -44,7 +44,11 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/drawflow.min.css">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="45" selection-start-column="45" selection-end-column="45" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -60,15 +64,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>console.l</find>
-      <find>addNode(</find>
-      <find>parentElement.id</find>
-      <find>dragEnd</find>
-      <find>dragend</find>
-      <find>console.log</find>
-      <find>!==</find>
-      <find>connection[</find>
-      <find>connection</find>
       <find>addNodeIm</find>
       <find>updateNodeVal</find>
       <find>Object.entries(dataNode.data).forEach(function (key, value) {</find>
@@ -77,7 +72,6 @@
       <find>connect</find>
       <find>addconn</find>
       <find>exist</find>
-      <find>click</find>
       <find>.parentElement.parentELement.par</find>
       <find>=== 'input'</find>
       <find>'output'</find>
@@ -90,6 +84,16 @@
       <find>main</find>
       <find>console.lo</find>
       <find>outputBottom</find>
+      <find>contextmenu</find>
+      <find>click</find>
+      <find>node_selected</find>
+      <find>context</find>
+      <find>deletebox</find>
+      <find>contextmenuDel</find>
+      <find>contextMe</find>
+      <find>drawflow</find>
+      <find>drawflow-delete</find>
+      <find>contextMenu</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -114,10 +118,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="-464" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1100" />
+    <option name="height" value="1044" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -188,12 +192,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1626253292509</updated>
-      <workItem from="1626253293681" duration="19336000" />
+      <workItem from="1626253293681" duration="23000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19336000" />
+    <option name="totallyTimeSpent" value="23000000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -204,7 +208,7 @@
       <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.17281349" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49841937" weight="0.32998884" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49841937" visible="true" weight="0.32998884" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5015806" side_tool="true" weight="0.32998884" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
@@ -270,6 +274,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dist/drawflow.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="45" selection-start-column="45" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1536">
@@ -281,15 +292,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/drawflow.min.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/drawflow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="1292" column="43" selection-start-line="1292" selection-start-column="43" selection-end-line="1292" selection-end-column="43" />
+        <state relative-caret-position="180">
+          <caret line="652" column="74" selection-start-line="652" selection-start-column="74" selection-end-line="652" selection-end-column="74" />
           <folding>
-            <element signature="n#!!block;n#dragEnd#0;n#Drawflow#0;n#!!top" />
             <element signature="e#16060#16488#0" />
             <element signature="n#!!block;n#addConnection#0;n#Drawflow#0;n#!!top" />
           </folding>
