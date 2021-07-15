@@ -1290,7 +1290,7 @@ export default class Drawflow {
         }
         for (var x = 0; x < num_out_top; x++) {
             const output = document.createElement('div');
-            output.classList.add("outputBottom");
+            output.classList.add("outputTop");
             output.classList.add("output_" + (num_out + x + 1));
             json_outputs["output_" + (num_out + x + 1)] = {"connections": [], "type": "outTop"};
             outputsTop.appendChild(output);

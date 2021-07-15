@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d843818a-fed0-41e4-a573-e4b523498a5f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/drawflow.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/drawflow.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/drawflow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawflow.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -33,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/drawflow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="697" column="43" selection-start-line="697" selection-start-column="43" selection-end-line="697" selection-end-column="43" />
+            <state relative-caret-position="299">
+              <caret line="1292" column="43" selection-start-line="1292" selection-start-column="43" selection-end-line="1292" selection-end-column="43" />
               <folding>
                 <element signature="n#!!block;n#dragEnd#0;n#Drawflow#0;n#!!top" />
                 <element signature="e#16060#16488#0" />
@@ -62,7 +60,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>output</find>
       <find>console.l</find>
       <find>addNode(</find>
       <find>parentElement.id</find>
@@ -92,6 +89,7 @@
       <find>inBottom</find>
       <find>main</find>
       <find>console.lo</find>
+      <find>outputBottom</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -190,12 +188,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1626253292509</updated>
-      <workItem from="1626253293681" duration="19151000" />
+      <workItem from="1626253293681" duration="19336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19151000" />
+    <option name="totallyTimeSpent" value="19336000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -288,8 +286,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/drawflow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="697" column="43" selection-start-line="697" selection-start-column="43" selection-end-line="697" selection-end-column="43" />
+        <state relative-caret-position="299">
+          <caret line="1292" column="43" selection-start-line="1292" selection-start-column="43" selection-end-line="1292" selection-end-column="43" />
           <folding>
             <element signature="n#!!block;n#dragEnd#0;n#Drawflow#0;n#!!top" />
             <element signature="e#16060#16488#0" />
