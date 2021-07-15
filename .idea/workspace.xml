@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d843818a-fed0-41e4-a573-e4b523498a5f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/dist/drawflow.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/drawflow.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/drawflow.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/drawflow.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/drawflow.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/drawflow.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/drawflow.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawflow.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/drawflow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawflow.js" afterDir="false" />
     </list>
@@ -22,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="14" column="24" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="24" />
+            <state relative-caret-position="-1752">
+              <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="e#397#404#1" expanded="true" />
@@ -35,32 +33,412 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/drawflow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="1288" column="8" selection-start-line="1288" selection-start-column="8" selection-end-line="1288" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+            <state>
+              <caret column="30" selection-start-column="30" selection-end-column="30" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#397#404#1" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#397#404#1" expanded="true" />
+                <element signature="n#Drawflow#0;n#!!top" />
+                <element signature="n#!!block;n#constructor#0;n#Drawflow#0;n#!!top" />
+                <element signature="n#!!block;n#start#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#1686#1715#0" />
+                <element signature="e#2169#2187#0" />
+                <element signature="e#2273#2285#0" />
+                <element signature="e#2360#2376#0" />
+                <element signature="e#2455#2478#0" />
+                <element signature="e#2638#2655#0" />
+                <element signature="e#3105#3122#0" />
+                <element signature="n#!!block;n#pointerdown_handler#0;n#Drawflow#0;n#!!top" />
+                <element signature="n#!!block;n#pointermove_handler#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#3259#3368#0" />
+                <element signature="e#3313#3363#0" />
+                <element signature="e#3403#3889#0" />
+                <element signature="e#3572#3854#0" />
+                <element signature="e#3610#3710#0" />
+                <element signature="e#3747#3847#0" />
+                <element signature="n#!!block;n#pointerup_handler#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#3981#4014#0" />
+                <element signature="n#!!block;n#remove_event#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#4137#4252#0" />
+                <element signature="e#4191#4247#0" />
+                <element signature="e#4259#4280#0" />
+                <element signature="n#!!block;n#load#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#4354#4450#0" />
+                <element signature="e#4473#4632#0" />
+                <element signature="e#4539#4626#0" />
+                <element signature="e#4696#4750#0" />
+                <element signature="e#4871#5040#0" />
+                <element signature="e#4941#5032#0" />
+                <element signature="e#4978#5024#0" />
+                <element signature="n#!!block;n#removeReouteConnectionSelected#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#5194#5353#0" />
+                <element signature="e#5293#5345#0" />
+                <element signature="n#!!block;n#click#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#5440#5681#0" />
+                <element signature="e#5559#5636#0" />
+                <element signature="e#5642#5675#0" />
+                <element signature="e#5719#5918#0" />
+                <element signature="e#5809#5912#0" />
+                <element signature="e#5924#6226#0" />
+                <element signature="e#6022#6062#0" />
+                <element signature="e#6125#6220#0" />
+                <element signature="e#6231#10697#0" />
+                <element signature="e#6279#7356#0" />
+                <element signature="e#6340#6529#0" />
+                <element signature="e#6455#6519#0" />
+                <element signature="e#6575#6743#0" />
+                <element signature="e#6796#6879#0" />
+                <element signature="e#7017#7236#0" />
+                <element signature="e#7183#7226#0" />
+                <element signature="e#7242#7341#0" />
+                <element signature="e#7288#7331#0" />
+                <element signature="e#7363#7873#0" />
+                <element signature="e#7449#7605#0" />
+                <element signature="e#7651#7819#0" />
+                <element signature="e#7880#8365#0" />
+                <element signature="e#7943#8099#0" />
+                <element signature="e#8145#8313#0" />
+                <element signature="e#8372#8850#0" />
+                <element signature="e#8428#8584#0" />
+                <element signature="e#8630#8798#0" />
+                <element signature="e#8857#9922#0" />
+                <element signature="e#8914#9070#0" />
+                <element signature="e#9116#9284#0" />
+                <element signature="e#11149#11411#0" />
+                <element signature="e#9737#9909#0" />
+                <element signature="e#9840#9897#0" />
+                <element signature="e#9929#10040#0" />
+                <element signature="e#10047#10676#0" />
+                <element signature="e#10103#10166#0" />
+                <element signature="e#10205#10251#0" />
+                <element signature="e#10292#10448#0" />
+                <element signature="e#10494#10662#0" />
+                <element signature="e#10731#10914#0" />
+                <element signature="e#10920#11059#0" />
+                <element signature="n#!!block;n#position#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#11147#11238#0" />
+                <element signature="e#11244#11313#0" />
+                <element signature="e#11340#11394#0" />
+                <element signature="e#11424#11676#0" />
+                <element signature="e#11695#12440#0" />
+                <element signature="e#12466#14610#0" />
+                <element signature="e#13784#14027#0" />
+                <element signature="e#13973#14019#0" />
+                <element signature="e#14212#14296#0" />
+                <element signature="e#16814#16888#0" />
+                <element signature="e#14644#14711#0" />
+                <element signature="n#!!block;n#dragEnd#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#14821#14962#0" />
+                <element signature="e#14968#15068#0" />
+                <element signature="e#15088#15241#0" />
+                <element signature="e#15159#15235#0" />
+                <element signature="e#15267#15508#0" />
+                <element signature="e#15394#15502#0" />
+                <element signature="e#15539#15712#0" />
+                <element signature="e#15746#18467#0" />
+                <element signature="e#15921#18293#0" />
+                <element signature="e#16060#16488#0" />
+                <element signature="e#16127#16228#0" />
+                <element signature="e#16234#16287#0" />
+                <element signature="e#16372#16420#0" />
+                <element signature="e#16426#16477#0" />
+                <element signature="e#16494#16647#0" />
+                <element signature="e#19519#19567#0" />
+                <element signature="e#19698#19738#0" />
+                <element signature="e#16840#18098#0" />
+                <element signature="e#16991#17943#0" />
+                <element signature="e#20441#20564#0" />
+                <element signature="e#20679#20803#0" />
+                <element signature="e#21010#21244#0" />
+                <element signature="e#17949#18051#0" />
+                <element signature="e#18104#18284#0" />
+                <element signature="e#18299#18461#0" />
+                <element signature="n#!!block;n#contextmenu#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#18767#18794#0" />
+                <element signature="e#18867#18949#0" />
+                <element signature="e#19006#19830#0" />
+                <element signature="e#19173#19234#0" />
+                <element signature="e#19270#19823#0" />
+                <element signature="n#!!block;n#contextmenuDel#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#19929#20011#0" />
+                <element signature="n#!!block;n#key#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#20130#20157#0" />
+                <element signature="e#20226#20583#0" />
+                <element signature="e#20265#20491#0" />
+                <element signature="e#20420#20483#0" />
+                <element signature="e#20535#20577#0" />
+                <element signature="n#!!block;n#zoom_enter#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#20641#20817#0" />
+                <element signature="e#20699#20753#0" />
+                <element signature="e#20759#20811#0" />
+                <element signature="n#!!block;n#zoom_refresh#0;n#Drawflow#0;n#!!top" />
+                <element signature="n#!!block;n#zoom_in#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#21225#21297#0" />
+                <element signature="n#!!block;n#zoom_out#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#21351#21421#0" />
+                <element signature="n#!!block;n#zoom_reset#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#21465#21520#0" />
+                <element signature="n#!!block;n#createCurvature#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#21802#23429#0" />
+                <element signature="e#21824#22270#0" />
+                <element signature="e#21874#22011#0" />
+                <element signature="e#22017#22149#0" />
+                <element signature="e#22277#22724#0" />
+                <element signature="e#22328#22465#0" />
+                <element signature="e#22471#22603#0" />
+                <element signature="e#22731#23183#0" />
+                <element signature="e#22782#22924#0" />
+                <element signature="e#22930#23062#0" />
+                <element signature="e#23190#23423#0" />
+                <element signature="n#!!block;n#drawConnection#0;n#Drawflow#0;n#!!top" />
+                <element signature="n#!!block;n#updateConnection#0;n#Drawflow#0;n#!!top" />
+                <element signature="n#!!block;n#addConnection#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#25665#27454#0" />
+                <element signature="e#25817#26039#0" />
+                <element signature="e#25994#26031#0" />
+                <element signature="e#26098#27448#0" />
+                <element signature="e#30768#30878#0" />
+                <element signature="e#30987#31098#0" />
+                <element signature="e#26483#27295#0" />
+                <element signature="e#32188#32382#0" />
+                <element signature="n#!!block;n#updateConnectionNodes#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#28455#37094#0" />
+                <element signature="e#28515#29752#0" />
+                <element signature="e#29758#37088#0" />
+                <element signature="e#29921#36800#0" />
+                <element signature="e#29975#32319#0" />
+                <element signature="e#32337#34333#0" />
+                <element signature="e#34369#35723#0" />
+                <element signature="e#35729#36789#0" />
+                <element signature="e#36837#36987#0" />
+                <element signature="e#36885#36974#0" />
+                <element signature="e#36993#37079#0" />
+                <element signature="e#37208#45777#0" />
+                <element signature="e#37266#38453#0" />
+                <element signature="e#38459#45771#0" />
+                <element signature="e#38619#45489#0" />
+                <element signature="e#38673#41016#0" />
+                <element signature="e#41034#43251#0" />
+                <element signature="e#43287#44565#0" />
+                <element signature="e#44571#45478#0" />
+                <element signature="e#45526#45673#0" />
+                <element signature="e#45574#45660#0" />
+                <element signature="e#45679#45762#0" />
+                <element signature="n#!!block;n#dblclick#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#45857#45923#0" />
+                <element signature="e#45967#46017#0" />
+                <element signature="n#!!block;n#createReroutePoint#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#47294#47996#0" />
+                <element signature="e#47670#47729#0" />
+                <element signature="e#47736#47987#0" />
+                <element signature="e#48002#48057#0" />
+                <element signature="e#48242#48326#0" />
+                <element signature="e#48463#48594#0" />
+                <element signature="e#48633#49242#0" />
+                <element signature="e#48724#48922#0" />
+                <element signature="e#56510#56596#0" />
+                <element signature="e#48928#49095#0" />
+                <element signature="e#56749#56835#0" />
+                <element signature="e#49175#49231#0" />
+                <element signature="e#49248#49411#0" />
+                <element signature="e#57147#57221#0" />
+                <element signature="n#!!block;n#removeReroutePoint#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#50045#50125#0" />
+                <element signature="e#50164#50446#0" />
+                <element signature="e#50396#50440#0" />
+                <element signature="n#!!block;n#registerNode#0;n#Drawflow#0;n#!!top" />
+                <element signature="n#!!block;n#getNodeFromId#0;n#Drawflow#0;n#!!top" />
+                <element signature="n#!!block;n#getNodesFromName#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#51147#51335#0" />
+                <element signature="e#51197#51329#0" />
+                <element signature="e#51254#51321#0" />
+                <element signature="n#!!block;n#addNode#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#51486#51531#0" />
+                <element signature="e#51576#51618#0" />
+                <element signature="e#51862#51910#0" />
+                <element signature="e#52152#52380#0" />
+                <element signature="e#52663#52891#0" />
+                <element signature="e#52447#52684#0" />
+                <element signature="e#53276#53513#0" />
+                <element signature="e#52816#52855#0" />
+                <element signature="e#53128#53249#0" />
+                <element signature="e#53255#53929#0" />
+                <element signature="e#53019#53278#0" />
+                <element signature="e#53081#53254#0" />
+                <element signature="e#53284#53597#0" />
+                <element signature="e#53341#53526#0" />
+                <element signature="e#53660#53941#0" />
+                <element signature="e#53699#53756#0" />
+                <element signature="e#53762#53935#0" />
+                <element signature="e#53877#53927#0" />
+                <element signature="n#!!block;n#insertObjectkeys#0;n#!!block;n#addNode#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#54029#54071#0" />
+                <element signature="e#54077#54120#0" />
+                <element signature="e#54147#54571#0" />
+                <element signature="e#54210#54561#0" />
+                <element signature="e#54253#54336#0" />
+                <element signature="e#54342#54551#0" />
+                <element signature="e#54481#54539#0" />
+                <element signature="e#54834#55074#0" />
+                <element signature="e#55207#55235#0" />
+                <element signature="n#!!block;n#addNodeImport#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#66124#66175#0" />
+                <element signature="e#66623#67821#0" />
+                <element signature="e#66810#66860#0" />
+                <element signature="e#66864#66920#0" />
+                <element signature="e#67016#67813#0" />
+                <element signature="e#67892#68256#0" />
+                <element signature="e#68139#68191#0" />
+                <element signature="e#68195#68250#0" />
+                <element signature="e#68457#68507#0" />
+                <element signature="e#68545#68636#0" />
+                <element signature="e#68642#69379#0" />
+                <element signature="e#68693#69005#0" />
+                <element signature="e#68763#68979#0" />
+                <element signature="e#69011#69373#0" />
+                <element signature="e#69075#69307#0" />
+                <element signature="e#69445#69948#0" />
+                <element signature="e#69487#69550#0" />
+                <element signature="e#69556#69942#0" />
+                <element signature="e#69682#69932#0" />
+                <element signature="e#69734#69877#0" />
+                <element signature="n#!!block;n#insertObjectkeys#0;n#!!block;n#addNodeImport#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#70039#70096#0" />
+                <element signature="e#70102#70151#0" />
+                <element signature="e#70181#70683#0" />
+                <element signature="e#70248#70671#0" />
+                <element signature="e#70298#70399#0" />
+                <element signature="e#70405#70657#0" />
+                <element signature="e#70567#70639#0" />
+                <element signature="e#71146#72426#0" />
+                <element signature="e#71345#71589#0" />
+                <element signature="e#71671#71858#0" />
+                <element signature="e#71901#71990#0" />
+                <element signature="e#72036#72236#0" />
+                <element signature="n#!!block;n#addRerouteImport#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#59619#61072#0" />
+                <element signature="e#59714#61064#0" />
+                <element signature="e#59833#61055#0" />
+                <element signature="e#59874#61043#0" />
+                <element signature="e#60247#60621#0" />
+                <element signature="e#60275#60607#0" />
+                <element signature="e#60333#60591#0" />
+                <element signature="n#!!block;n#updateNodeValue#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#72809#72968#0" />
+                <element signature="e#72855#72906#0" />
+                <element signature="e#72912#72962#0" />
+                <element signature="e#61188#61814#0" />
+                <element signature="e#61242#61808#0" />
+                <element signature="e#61532#61728#0" />
+                <element signature="e#61587#61660#0" />
+                <element signature="n#!!block;n#updateNodeDataFromId#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#62001#63106#0" />
+                <element signature="e#62126#62425#0" />
+                <element signature="e#62167#62228#0" />
+                <element signature="e#62234#62417#0" />
+                <element signature="e#62353#62407#0" />
+                <element signature="e#62487#63099#0" />
+                <element signature="e#62517#62563#0" />
+                <element signature="e#62569#62616#0" />
+                <element signature="e#62645#63091#0" />
+                <element signature="e#62710#63079#0" />
+                <element signature="e#62755#62842#0" />
+                <element signature="e#62848#63067#0" />
+                <element signature="e#62991#63053#0" />
+                <element signature="n#!!block;n#addNodeInput#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#63321#63640#0" />
+                <element signature="n#!!block;n#addNodeOutput#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#63961#64289#0" />
+                <element signature="n#!!block;n#removeNodeInput#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#64567#64663#0" />
+                <element signature="e#64776#65011#0" />
+                <element signature="e#65077#65181#0" />
+                <element signature="e#65456#65511#0" />
+                <element signature="e#65687#65866#0" />
+                <element signature="e#65734#65776#0" />
+                <element signature="e#66041#66405#0" />
+                <element signature="e#66159#66396#0" />
+                <element signature="e#66272#66388#0" />
+                <element signature="e#66445#67504#0" />
+                <element signature="e#66560#67496#0" />
+                <element signature="e#66593#67488#0" />
+                <element signature="e#66711#67476#0" />
+                <element signature="e#66758#67047#0" />
+                <element signature="e#67079#67279#0" />
+                <element signature="e#79084#79286#0" />
+                <element signature="e#67285#67462#0" />
+                <element signature="e#79438#79586#0" />
+                <element signature="n#!!block;n#removeNodeOutput#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#67724#67823#0" />
+                <element signature="e#67939#68177#0" />
+                <element signature="e#68244#68347#0" />
+                <element signature="e#68625#68680#0" />
+                <element signature="e#68859#69077#0" />
+                <element signature="e#68906#68985#0" />
+                <element signature="e#69252#69621#0" />
+                <element signature="e#69372#69612#0" />
+                <element signature="e#69486#69604#0" />
+                <element signature="e#69661#70819#0" />
+                <element signature="e#69776#70811#0" />
+                <element signature="e#69809#70803#0" />
+                <element signature="e#69925#70791#0" />
+                <element signature="e#69972#70364#0" />
+                <element signature="e#70396#70595#0" />
+                <element signature="e#83090#83291#0" />
+                <element signature="e#70601#70777#0" />
+                <element signature="e#83443#83590#0" />
+                <element signature="n#!!block;n#removeNodeId#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#71024#71086#0" />
+                <element signature="n#!!block;n#removeConnection#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#71268#72380#0" />
+                <element signature="e#71577#71670#0" />
+                <element signature="e#71946#72038#0" />
+                <element signature="e#85201#85403#0" />
+                <element signature="n#!!block;n#removeSingleConnection#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#72622#74066#0" />
+                <element signature="e#72828#72905#0" />
+                <element signature="e#72930#74023#0" />
+                <element signature="e#72975#73173#0" />
+                <element signature="e#73314#73395#0" />
+                <element signature="e#73651#73733#0" />
+                <element signature="e#87164#87358#0" />
+                <element signature="e#74029#74060#0" />
+                <element signature="e#74072#74099#0" />
+                <element signature="n#!!block;n#removeConnectionNodeId#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#74336#75326#0" />
+                <element signature="e#74530#74622#0" />
+                <element signature="e#74898#74991#0" />
+                <element signature="e#88703#88905#0" />
+                <element signature="e#75446#76435#0" />
+                <element signature="e#75642#75735#0" />
+                <element signature="e#76011#76103#0" />
+                <element signature="e#89978#90180#0" />
+                <element signature="n#!!block;n#getModuleFromNodeId#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#76587#76745#0" />
+                <element signature="e#76659#76738#0" />
+                <element signature="e#76684#76730#0" />
+                <element signature="n#!!block;n#addModule#0;n#Drawflow#0;n#!!top" />
+                <element signature="n#!!block;n#changeModule#0;n#Drawflow#0;n#!!top" />
+                <element signature="n#!!block;n#removeModule#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#77334#77374#0" />
+                <element signature="n#!!block;n#clearModuleSelected#0;n#Drawflow#0;n#!!top" />
+                <element signature="n#!!block;n#clear#0;n#Drawflow#0;n#!!top" />
+                <element signature="n#!!block;n#export#0;n#Drawflow#0;n#!!top" />
+                <element signature="n#!!block;n#import#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#77988#78036#0" />
+                <element signature="e#78044#78056#0" />
+                <element signature="n#!!block;n#on#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#78175#78318#0" />
+                <element signature="e#78402#78533#0" />
+                <element signature="e#78620#78706#0" />
+                <element signature="e#78654#78697#0" />
+                <element signature="n#!!block;n#removeListener#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#78889#78991#0" />
+                <element signature="e#79076#79145#0" />
+                <element signature="n#!!block;n#dispatch#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#79271#79374#0" />
+                <element signature="e#79433#79473#0" />
+                <element signature="n#!!block;n#getUuid#0;n#Drawflow#0;n#!!top" />
+                <element signature="e#79646#79731#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/drawflow.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3504">
-              <caret line="146" lean-forward="true" selection-start-line="146" selection-end-line="146" />
             </state>
           </provider>
         </entry>
@@ -73,8 +451,31 @@
       <find>input_</find>
       <find>addNode</find>
       <find>input</find>
-      <find>content</find>
       <find>contentHold</find>
+      <find>drawflow-node</find>
+      <find>content</find>
+      <find>draf</find>
+      <find>drawflow_content_node</find>
+      <find>'output'</find>
+      <find>case 'out</find>
+      <find>main-path</find>
+      <find>path</find>
+      <find>outputs</find>
+      <find>output</find>
+      <find>console.l</find>
+      <find>addNode(</find>
+      <find>parentElement.id</find>
+      <find>dragEnd</find>
+      <find>inputBottom</find>
+      <find>dragend</find>
+      <find>console.log</find>
+      <find>!==</find>
+      <find>connection[</find>
+      <find>connection</find>
+      <find>addNodeIm</find>
+      <find>updateNodeVal</find>
+      <find>Object.entries(dataNode.data).forEach(function (key, value) {</find>
+      <find>inputs</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,10 +500,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="-351" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="height" value="1100" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -121,6 +522,11 @@
               <item name="Drawflow" type="b2602c69:ProjectViewProjectNode" />
               <item name="Drawflow" type="462c0819:PsiDirectoryNode" />
               <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Drawflow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Drawflow" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -168,12 +574,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1626253292509</updated>
-      <workItem from="1626253293681" duration="3961000" />
+      <workItem from="1626253293681" duration="13797000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3961000" />
+    <option name="totallyTimeSpent" value="13797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -184,8 +590,8 @@
       <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.17281349" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32998884" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50052685" side_tool="true" weight="0.32998884" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49841937" weight="0.32998884" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5015806" side_tool="true" weight="0.32998884" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -216,24 +622,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.html">
+    <entry file="file://$PROJECT_DIR$/src/drawflow.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#397#404#1" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#397#404#1" expanded="true" />
-          </folding>
+        <state relative-caret-position="332">
+          <caret line="163" column="20" selection-end-line="178" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="24" />
+        <state relative-caret-position="216">
+          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
           <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#397#404#1" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="e#397#404#1" expanded="true" />
           </folding>
@@ -247,17 +649,425 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/drawflow.css">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3504">
-          <caret line="146" lean-forward="true" selection-start-line="146" selection-end-line="146" />
+        <state relative-caret-position="-1752">
+          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#397#404#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/drawflow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="1288" column="8" selection-start-line="1288" selection-start-column="8" selection-end-line="1288" selection-end-column="8" />
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
+          <folding>
+            <element signature="n#Drawflow#0;n#!!top" />
+            <element signature="n#!!block;n#constructor#0;n#Drawflow#0;n#!!top" />
+            <element signature="n#!!block;n#start#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#1686#1715#0" />
+            <element signature="e#2169#2187#0" />
+            <element signature="e#2273#2285#0" />
+            <element signature="e#2360#2376#0" />
+            <element signature="e#2455#2478#0" />
+            <element signature="e#2638#2655#0" />
+            <element signature="e#3105#3122#0" />
+            <element signature="n#!!block;n#pointerdown_handler#0;n#Drawflow#0;n#!!top" />
+            <element signature="n#!!block;n#pointermove_handler#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#3259#3368#0" />
+            <element signature="e#3313#3363#0" />
+            <element signature="e#3403#3889#0" />
+            <element signature="e#3572#3854#0" />
+            <element signature="e#3610#3710#0" />
+            <element signature="e#3747#3847#0" />
+            <element signature="n#!!block;n#pointerup_handler#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#3981#4014#0" />
+            <element signature="n#!!block;n#remove_event#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#4137#4252#0" />
+            <element signature="e#4191#4247#0" />
+            <element signature="e#4259#4280#0" />
+            <element signature="n#!!block;n#load#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#4354#4450#0" />
+            <element signature="e#4473#4632#0" />
+            <element signature="e#4539#4626#0" />
+            <element signature="e#4696#4750#0" />
+            <element signature="e#4871#5040#0" />
+            <element signature="e#4941#5032#0" />
+            <element signature="e#4978#5024#0" />
+            <element signature="n#!!block;n#removeReouteConnectionSelected#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#5194#5353#0" />
+            <element signature="e#5293#5345#0" />
+            <element signature="n#!!block;n#click#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#5440#5681#0" />
+            <element signature="e#5559#5636#0" />
+            <element signature="e#5642#5675#0" />
+            <element signature="e#5719#5918#0" />
+            <element signature="e#5809#5912#0" />
+            <element signature="e#5924#6226#0" />
+            <element signature="e#6022#6062#0" />
+            <element signature="e#6125#6220#0" />
+            <element signature="e#6231#10697#0" />
+            <element signature="e#6279#7356#0" />
+            <element signature="e#6340#6529#0" />
+            <element signature="e#6455#6519#0" />
+            <element signature="e#6575#6743#0" />
+            <element signature="e#6796#6879#0" />
+            <element signature="e#7017#7236#0" />
+            <element signature="e#7183#7226#0" />
+            <element signature="e#7242#7341#0" />
+            <element signature="e#7288#7331#0" />
+            <element signature="e#7363#7873#0" />
+            <element signature="e#7449#7605#0" />
+            <element signature="e#7651#7819#0" />
+            <element signature="e#7880#8365#0" />
+            <element signature="e#7943#8099#0" />
+            <element signature="e#8145#8313#0" />
+            <element signature="e#8372#8850#0" />
+            <element signature="e#8428#8584#0" />
+            <element signature="e#8630#8798#0" />
+            <element signature="e#8857#9922#0" />
+            <element signature="e#8914#9070#0" />
+            <element signature="e#9116#9284#0" />
+            <element signature="e#11149#11411#0" />
+            <element signature="e#9737#9909#0" />
+            <element signature="e#9840#9897#0" />
+            <element signature="e#9929#10040#0" />
+            <element signature="e#10047#10676#0" />
+            <element signature="e#10103#10166#0" />
+            <element signature="e#10205#10251#0" />
+            <element signature="e#10292#10448#0" />
+            <element signature="e#10494#10662#0" />
+            <element signature="e#10731#10914#0" />
+            <element signature="e#10920#11059#0" />
+            <element signature="n#!!block;n#position#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#11147#11238#0" />
+            <element signature="e#11244#11313#0" />
+            <element signature="e#11340#11394#0" />
+            <element signature="e#11424#11676#0" />
+            <element signature="e#11695#12440#0" />
+            <element signature="e#12466#14610#0" />
+            <element signature="e#13784#14027#0" />
+            <element signature="e#13973#14019#0" />
+            <element signature="e#14212#14296#0" />
+            <element signature="e#16814#16888#0" />
+            <element signature="e#14644#14711#0" />
+            <element signature="n#!!block;n#dragEnd#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#14821#14962#0" />
+            <element signature="e#14968#15068#0" />
+            <element signature="e#15088#15241#0" />
+            <element signature="e#15159#15235#0" />
+            <element signature="e#15267#15508#0" />
+            <element signature="e#15394#15502#0" />
+            <element signature="e#15539#15712#0" />
+            <element signature="e#15746#18467#0" />
+            <element signature="e#15921#18293#0" />
+            <element signature="e#16060#16488#0" />
+            <element signature="e#16127#16228#0" />
+            <element signature="e#16234#16287#0" />
+            <element signature="e#16372#16420#0" />
+            <element signature="e#16426#16477#0" />
+            <element signature="e#16494#16647#0" />
+            <element signature="e#19519#19567#0" />
+            <element signature="e#19698#19738#0" />
+            <element signature="e#16840#18098#0" />
+            <element signature="e#16991#17943#0" />
+            <element signature="e#20441#20564#0" />
+            <element signature="e#20679#20803#0" />
+            <element signature="e#21010#21244#0" />
+            <element signature="e#17949#18051#0" />
+            <element signature="e#18104#18284#0" />
+            <element signature="e#18299#18461#0" />
+            <element signature="n#!!block;n#contextmenu#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#18767#18794#0" />
+            <element signature="e#18867#18949#0" />
+            <element signature="e#19006#19830#0" />
+            <element signature="e#19173#19234#0" />
+            <element signature="e#19270#19823#0" />
+            <element signature="n#!!block;n#contextmenuDel#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#19929#20011#0" />
+            <element signature="n#!!block;n#key#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#20130#20157#0" />
+            <element signature="e#20226#20583#0" />
+            <element signature="e#20265#20491#0" />
+            <element signature="e#20420#20483#0" />
+            <element signature="e#20535#20577#0" />
+            <element signature="n#!!block;n#zoom_enter#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#20641#20817#0" />
+            <element signature="e#20699#20753#0" />
+            <element signature="e#20759#20811#0" />
+            <element signature="n#!!block;n#zoom_refresh#0;n#Drawflow#0;n#!!top" />
+            <element signature="n#!!block;n#zoom_in#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#21225#21297#0" />
+            <element signature="n#!!block;n#zoom_out#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#21351#21421#0" />
+            <element signature="n#!!block;n#zoom_reset#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#21465#21520#0" />
+            <element signature="n#!!block;n#createCurvature#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#21802#23429#0" />
+            <element signature="e#21824#22270#0" />
+            <element signature="e#21874#22011#0" />
+            <element signature="e#22017#22149#0" />
+            <element signature="e#22277#22724#0" />
+            <element signature="e#22328#22465#0" />
+            <element signature="e#22471#22603#0" />
+            <element signature="e#22731#23183#0" />
+            <element signature="e#22782#22924#0" />
+            <element signature="e#22930#23062#0" />
+            <element signature="e#23190#23423#0" />
+            <element signature="n#!!block;n#drawConnection#0;n#Drawflow#0;n#!!top" />
+            <element signature="n#!!block;n#updateConnection#0;n#Drawflow#0;n#!!top" />
+            <element signature="n#!!block;n#addConnection#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#25665#27454#0" />
+            <element signature="e#25817#26039#0" />
+            <element signature="e#25994#26031#0" />
+            <element signature="e#26098#27448#0" />
+            <element signature="e#30768#30878#0" />
+            <element signature="e#30987#31098#0" />
+            <element signature="e#26483#27295#0" />
+            <element signature="e#32188#32382#0" />
+            <element signature="n#!!block;n#updateConnectionNodes#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#28455#37094#0" />
+            <element signature="e#28515#29752#0" />
+            <element signature="e#29758#37088#0" />
+            <element signature="e#29921#36800#0" />
+            <element signature="e#29975#32319#0" />
+            <element signature="e#32337#34333#0" />
+            <element signature="e#34369#35723#0" />
+            <element signature="e#35729#36789#0" />
+            <element signature="e#36837#36987#0" />
+            <element signature="e#36885#36974#0" />
+            <element signature="e#36993#37079#0" />
+            <element signature="e#37208#45777#0" />
+            <element signature="e#37266#38453#0" />
+            <element signature="e#38459#45771#0" />
+            <element signature="e#38619#45489#0" />
+            <element signature="e#38673#41016#0" />
+            <element signature="e#41034#43251#0" />
+            <element signature="e#43287#44565#0" />
+            <element signature="e#44571#45478#0" />
+            <element signature="e#45526#45673#0" />
+            <element signature="e#45574#45660#0" />
+            <element signature="e#45679#45762#0" />
+            <element signature="n#!!block;n#dblclick#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#45857#45923#0" />
+            <element signature="e#45967#46017#0" />
+            <element signature="n#!!block;n#createReroutePoint#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#47294#47996#0" />
+            <element signature="e#47670#47729#0" />
+            <element signature="e#47736#47987#0" />
+            <element signature="e#48002#48057#0" />
+            <element signature="e#48242#48326#0" />
+            <element signature="e#48463#48594#0" />
+            <element signature="e#48633#49242#0" />
+            <element signature="e#48724#48922#0" />
+            <element signature="e#56510#56596#0" />
+            <element signature="e#48928#49095#0" />
+            <element signature="e#56749#56835#0" />
+            <element signature="e#49175#49231#0" />
+            <element signature="e#49248#49411#0" />
+            <element signature="e#57147#57221#0" />
+            <element signature="n#!!block;n#removeReroutePoint#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#50045#50125#0" />
+            <element signature="e#50164#50446#0" />
+            <element signature="e#50396#50440#0" />
+            <element signature="n#!!block;n#registerNode#0;n#Drawflow#0;n#!!top" />
+            <element signature="n#!!block;n#getNodeFromId#0;n#Drawflow#0;n#!!top" />
+            <element signature="n#!!block;n#getNodesFromName#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#51147#51335#0" />
+            <element signature="e#51197#51329#0" />
+            <element signature="e#51254#51321#0" />
+            <element signature="n#!!block;n#addNode#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#51486#51531#0" />
+            <element signature="e#51576#51618#0" />
+            <element signature="e#51862#51910#0" />
+            <element signature="e#52152#52380#0" />
+            <element signature="e#52663#52891#0" />
+            <element signature="e#52447#52684#0" />
+            <element signature="e#53276#53513#0" />
+            <element signature="e#52816#52855#0" />
+            <element signature="e#53128#53249#0" />
+            <element signature="e#53255#53929#0" />
+            <element signature="e#53019#53278#0" />
+            <element signature="e#53081#53254#0" />
+            <element signature="e#53284#53597#0" />
+            <element signature="e#53341#53526#0" />
+            <element signature="e#53660#53941#0" />
+            <element signature="e#53699#53756#0" />
+            <element signature="e#53762#53935#0" />
+            <element signature="e#53877#53927#0" />
+            <element signature="n#!!block;n#insertObjectkeys#0;n#!!block;n#addNode#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#54029#54071#0" />
+            <element signature="e#54077#54120#0" />
+            <element signature="e#54147#54571#0" />
+            <element signature="e#54210#54561#0" />
+            <element signature="e#54253#54336#0" />
+            <element signature="e#54342#54551#0" />
+            <element signature="e#54481#54539#0" />
+            <element signature="e#54834#55074#0" />
+            <element signature="e#55207#55235#0" />
+            <element signature="n#!!block;n#addNodeImport#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#66124#66175#0" />
+            <element signature="e#66623#67821#0" />
+            <element signature="e#66810#66860#0" />
+            <element signature="e#66864#66920#0" />
+            <element signature="e#67016#67813#0" />
+            <element signature="e#67892#68256#0" />
+            <element signature="e#68139#68191#0" />
+            <element signature="e#68195#68250#0" />
+            <element signature="e#68457#68507#0" />
+            <element signature="e#68545#68636#0" />
+            <element signature="e#68642#69379#0" />
+            <element signature="e#68693#69005#0" />
+            <element signature="e#68763#68979#0" />
+            <element signature="e#69011#69373#0" />
+            <element signature="e#69075#69307#0" />
+            <element signature="e#69445#69948#0" />
+            <element signature="e#69487#69550#0" />
+            <element signature="e#69556#69942#0" />
+            <element signature="e#69682#69932#0" />
+            <element signature="e#69734#69877#0" />
+            <element signature="n#!!block;n#insertObjectkeys#0;n#!!block;n#addNodeImport#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#70039#70096#0" />
+            <element signature="e#70102#70151#0" />
+            <element signature="e#70181#70683#0" />
+            <element signature="e#70248#70671#0" />
+            <element signature="e#70298#70399#0" />
+            <element signature="e#70405#70657#0" />
+            <element signature="e#70567#70639#0" />
+            <element signature="e#71146#72426#0" />
+            <element signature="e#71345#71589#0" />
+            <element signature="e#71671#71858#0" />
+            <element signature="e#71901#71990#0" />
+            <element signature="e#72036#72236#0" />
+            <element signature="n#!!block;n#addRerouteImport#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#59619#61072#0" />
+            <element signature="e#59714#61064#0" />
+            <element signature="e#59833#61055#0" />
+            <element signature="e#59874#61043#0" />
+            <element signature="e#60247#60621#0" />
+            <element signature="e#60275#60607#0" />
+            <element signature="e#60333#60591#0" />
+            <element signature="n#!!block;n#updateNodeValue#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#72809#72968#0" />
+            <element signature="e#72855#72906#0" />
+            <element signature="e#72912#72962#0" />
+            <element signature="e#61188#61814#0" />
+            <element signature="e#61242#61808#0" />
+            <element signature="e#61532#61728#0" />
+            <element signature="e#61587#61660#0" />
+            <element signature="n#!!block;n#updateNodeDataFromId#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#62001#63106#0" />
+            <element signature="e#62126#62425#0" />
+            <element signature="e#62167#62228#0" />
+            <element signature="e#62234#62417#0" />
+            <element signature="e#62353#62407#0" />
+            <element signature="e#62487#63099#0" />
+            <element signature="e#62517#62563#0" />
+            <element signature="e#62569#62616#0" />
+            <element signature="e#62645#63091#0" />
+            <element signature="e#62710#63079#0" />
+            <element signature="e#62755#62842#0" />
+            <element signature="e#62848#63067#0" />
+            <element signature="e#62991#63053#0" />
+            <element signature="n#!!block;n#addNodeInput#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#63321#63640#0" />
+            <element signature="n#!!block;n#addNodeOutput#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#63961#64289#0" />
+            <element signature="n#!!block;n#removeNodeInput#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#64567#64663#0" />
+            <element signature="e#64776#65011#0" />
+            <element signature="e#65077#65181#0" />
+            <element signature="e#65456#65511#0" />
+            <element signature="e#65687#65866#0" />
+            <element signature="e#65734#65776#0" />
+            <element signature="e#66041#66405#0" />
+            <element signature="e#66159#66396#0" />
+            <element signature="e#66272#66388#0" />
+            <element signature="e#66445#67504#0" />
+            <element signature="e#66560#67496#0" />
+            <element signature="e#66593#67488#0" />
+            <element signature="e#66711#67476#0" />
+            <element signature="e#66758#67047#0" />
+            <element signature="e#67079#67279#0" />
+            <element signature="e#79084#79286#0" />
+            <element signature="e#67285#67462#0" />
+            <element signature="e#79438#79586#0" />
+            <element signature="n#!!block;n#removeNodeOutput#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#67724#67823#0" />
+            <element signature="e#67939#68177#0" />
+            <element signature="e#68244#68347#0" />
+            <element signature="e#68625#68680#0" />
+            <element signature="e#68859#69077#0" />
+            <element signature="e#68906#68985#0" />
+            <element signature="e#69252#69621#0" />
+            <element signature="e#69372#69612#0" />
+            <element signature="e#69486#69604#0" />
+            <element signature="e#69661#70819#0" />
+            <element signature="e#69776#70811#0" />
+            <element signature="e#69809#70803#0" />
+            <element signature="e#69925#70791#0" />
+            <element signature="e#69972#70364#0" />
+            <element signature="e#70396#70595#0" />
+            <element signature="e#83090#83291#0" />
+            <element signature="e#70601#70777#0" />
+            <element signature="e#83443#83590#0" />
+            <element signature="n#!!block;n#removeNodeId#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#71024#71086#0" />
+            <element signature="n#!!block;n#removeConnection#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#71268#72380#0" />
+            <element signature="e#71577#71670#0" />
+            <element signature="e#71946#72038#0" />
+            <element signature="e#85201#85403#0" />
+            <element signature="n#!!block;n#removeSingleConnection#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#72622#74066#0" />
+            <element signature="e#72828#72905#0" />
+            <element signature="e#72930#74023#0" />
+            <element signature="e#72975#73173#0" />
+            <element signature="e#73314#73395#0" />
+            <element signature="e#73651#73733#0" />
+            <element signature="e#87164#87358#0" />
+            <element signature="e#74029#74060#0" />
+            <element signature="e#74072#74099#0" />
+            <element signature="n#!!block;n#removeConnectionNodeId#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#74336#75326#0" />
+            <element signature="e#74530#74622#0" />
+            <element signature="e#74898#74991#0" />
+            <element signature="e#88703#88905#0" />
+            <element signature="e#75446#76435#0" />
+            <element signature="e#75642#75735#0" />
+            <element signature="e#76011#76103#0" />
+            <element signature="e#89978#90180#0" />
+            <element signature="n#!!block;n#getModuleFromNodeId#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#76587#76745#0" />
+            <element signature="e#76659#76738#0" />
+            <element signature="e#76684#76730#0" />
+            <element signature="n#!!block;n#addModule#0;n#Drawflow#0;n#!!top" />
+            <element signature="n#!!block;n#changeModule#0;n#Drawflow#0;n#!!top" />
+            <element signature="n#!!block;n#removeModule#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#77334#77374#0" />
+            <element signature="n#!!block;n#clearModuleSelected#0;n#Drawflow#0;n#!!top" />
+            <element signature="n#!!block;n#clear#0;n#Drawflow#0;n#!!top" />
+            <element signature="n#!!block;n#export#0;n#Drawflow#0;n#!!top" />
+            <element signature="n#!!block;n#import#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#77988#78036#0" />
+            <element signature="e#78044#78056#0" />
+            <element signature="n#!!block;n#on#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#78175#78318#0" />
+            <element signature="e#78402#78533#0" />
+            <element signature="e#78620#78706#0" />
+            <element signature="e#78654#78697#0" />
+            <element signature="n#!!block;n#removeListener#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#78889#78991#0" />
+            <element signature="e#79076#79145#0" />
+            <element signature="n#!!block;n#dispatch#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#79271#79374#0" />
+            <element signature="e#79433#79473#0" />
+            <element signature="n#!!block;n#getUuid#0;n#Drawflow#0;n#!!top" />
+            <element signature="e#79646#79731#0" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -197,7 +197,7 @@ export default class Drawflow {
             }
 
             if (e.target.closest(".drawflow_content_node") != null) {
-                this.ele_selected = e.target.closest(".drawflow_content_node").parentElement;
+                this.ele_selected = e.target.closest(".drawflow_content_node").parentElement.parentElement;
             }
         }
         switch (this.ele_selected.classList[0]) {
@@ -228,6 +228,7 @@ export default class Drawflow {
                     }
                 }
                 break;
+            case 'outputTop':
             case 'output':
                 this.connection = true;
                 if (this.node_selected != null) {
@@ -451,10 +452,9 @@ export default class Drawflow {
         }
         if (this.connection === true) {
             if (ele_last.classList[0] === 'input' || (this.force_first_input && (ele_last.closest(".drawflow_content_node") != null || ele_last.classList[0] === 'drawflow-node'))) {
-
                 if (this.force_first_input && (ele_last.closest(".drawflow_content_node") != null || ele_last.classList[0] === 'drawflow-node')) {
                     if (ele_last.closest(".drawflow_content_node") != null) {
-                        var input_id = ele_last.closest(".drawflow_content_node").parentElement.id;
+                        var input_id = ele_last.closest(".drawflow_content_node").parentElement.parentElement.parentElement.id;
                     } else {
                         var input_id = ele_last.id;
                     }
@@ -468,13 +468,17 @@ export default class Drawflow {
                 } else {
                     // Fix connection;
                     var input_id = ele_last.parentElement.parentElement.id;
+                    if (ele_last.parentElement.parentElement.classList[0] !== "drawflow-node") {
+                        input_id = ele_last.parentElement.parentElement.parentElement.id;
+                    }
                     var input_class = ele_last.classList[1];
                 }
                 var output_id = this.ele_selected.parentElement.parentElement.id;
+                if (this.ele_selected.parentElement.parentElement.parentElement.classList[0] !== "parent-node") {
+                    output_id = this.ele_selected.parentElement.parentElement.parentElement.id;
+                }
                 var output_class = this.ele_selected.classList[1];
-
                 if (output_id !== input_id && input_class !== false) {
-
                     if (this.container.querySelectorAll('.connection.node_in_' + input_id + '.node_out_' + output_id + '.' + output_class + '.' + input_class).length === 0) {
                         // Conection no exist save connection
 
@@ -689,7 +693,6 @@ export default class Drawflow {
         var id_output = ele.parentElement.parentElement.id.slice(5);
         var output_class = ele.classList[1];
         this.dispatch('connectionStart', {output_id: id_output, output_class: output_class});
-
     }
 
     updateConnection(eX, eY) {
@@ -1255,38 +1258,39 @@ export default class Drawflow {
             const input = document.createElement('div');
             input.classList.add("input");
             input.classList.add("input_" + (x + 1));
-            json_inputs["input_" + (x + 1)] = {"connections": []};
+            json_inputs["input_" + (x + 1)] = {"connections": [], "type": "in"};
             inputs.appendChild(input);
         }
         for (var x = 0; x < num_in_bottom; x++) {
             const input = document.createElement('div');
-            input.classList.add("inputBottom");
+            input.classList.add("input");
             input.classList.add("input_" + (num_in + x + 1));
-            json_inputs["input_" + (num_in + x + 1)] = {"connections": []};
+            json_inputs["input_" + (num_in + x + 1)] = {"connections": [], "type": "inBottom"};
             inputsBottom.appendChild(input);
         }
 
-        const json_outputs = {}
+        const json_outputs = {};
         for (var x = 0; x < num_out; x++) {
             const output = document.createElement('div');
             output.classList.add("output");
             output.classList.add("output_" + (x + 1));
-            json_outputs["output_" + (x + 1)] = {"connections": []};
+            json_outputs["output_" + (x + 1)] = {"connections": [], "type": "out"};
             outputs.appendChild(output);
         }
         for (var x = 0; x < num_out_top; x++) {
             const output = document.createElement('div');
-            output.classList.add("outputTop");
+            output.classList.add("output");
             output.classList.add("output_" + (num_out + x + 1));
-            json_outputs["output_" + (num_out + x + 1)] = {"connections": []};
+            json_outputs["output_" + (num_out + x + 1)] = {"connections": [], "type": "outTop"};
             outputsTop.appendChild(output);
         }
 
         const contentHolder = document.createElement('div');
-        contentHolder.classList.add("drawflow_content_node_holder");
+        // contentHolder.classList.add("drawflow_content_node_holder");
+
         const content = document.createElement('div');
         content.classList.add("drawflow_content_node");
-        
+
         if (typenode === false) {
             content.innerHTML = html;
         } else if (typenode === true) {
@@ -1341,10 +1345,11 @@ export default class Drawflow {
             }
         }
 
-        content.insertBefore(outputsTop, content.children[0]);
-        content.appendChild(inputsBottom);
+        contentHolder.appendChild(outputsTop);
+        contentHolder.appendChild(content);
+        contentHolder.appendChild(inputsBottom);
         node.appendChild(inputs);
-        node.appendChild(content);
+        node.appendChild(contentHolder);
         node.appendChild(outputs);
         node.style.top = ele_pos_y + "px";
         node.style.left = ele_pos_x + "px";
@@ -1388,11 +1393,20 @@ export default class Drawflow {
         const outputs = document.createElement('div');
         outputs.classList.add("outputs");
 
+        const inputsBottom = document.createElement('div');
+        inputsBottom.classList.add("inputsBottom");
+        const outputsTop = document.createElement('div');
+        outputsTop.classList.add("outputsTop");
+
         Object.keys(dataNode.inputs).map(function (input_item, index) {
             const input = document.createElement('div');
             input.classList.add("input");
             input.classList.add(input_item);
-            inputs.appendChild(input);
+            if (dataNode.inputs[input_item].type === "in") {
+                inputs.appendChild(input);
+            } else {
+                inputsBottom.appendChild(input);
+            }
             Object.keys(dataNode.inputs[input_item].connections).map(function (output_item, index) {
 
                 var connection = document.createElementNS('http://www.w3.org/2000/svg', "svg");
@@ -1413,11 +1427,18 @@ export default class Drawflow {
         });
 
         for (var x = 0; x < Object.keys(dataNode.outputs).length; x++) {
+            console.log();
             const output = document.createElement('div');
             output.classList.add("output");
             output.classList.add("output_" + (x + 1));
-            outputs.appendChild(output);
+            if (dataNode.outputs[Object.keys(dataNode.outputs)[x]].type === "out") {
+                outputs.appendChild(output);
+            } else {
+                outputsTop.appendChild(output);
+            }
         }
+
+        const contentHolder = document.createElement('div');
 
         const content = document.createElement('div');
         content.classList.add("drawflow_content_node");
@@ -1450,6 +1471,10 @@ export default class Drawflow {
             } else {
                 var elems = content.querySelectorAll('[df-' + key[0] + ']');
                 for (var i = 0; i < elems.length; i++) {
+                    if (elems[i].type === "checkbox") {
+                        elems[i].checked = key[1] === "true" ? true : false;
+                        checkedBehaviour($(elems[i]));
+                    }
                     elems[i].value = key[1];
                 }
             }
@@ -1475,13 +1500,48 @@ export default class Drawflow {
             }
         }
 
+        contentHolder.appendChild(outputsTop);
+        contentHolder.appendChild(content);
+        contentHolder.appendChild(inputsBottom);
         node.appendChild(inputs);
-        node.appendChild(content);
+        node.appendChild(contentHolder);
         node.appendChild(outputs);
         node.style.top = dataNode.pos_y + "px";
         node.style.left = dataNode.pos_x + "px";
         parent.appendChild(node);
         this.precanvas.appendChild(parent);
+
+        //Check if Map => Load Map Code
+        if (dataNode.name === "map") {
+            var mapElement = $(document.getElementById("node-" + dataNode.id))[0].children[1].children[1].children[0].children[0];
+            // Read location => Zoom To
+            var map = new mapboxgl.Map({
+                container: mapElement,
+                style: 'mapbox://styles/mapbox/dark-v10',
+                minZoom: 3,
+                maxZoom: 18,
+                scrollZoom: false,
+                doubleClickZoom: false,
+                dragPan: false,
+            });
+            if (dataNode.data.latlon !== undefined && dataNode.data.latlon !== "") {
+                new mapboxgl.Marker()
+                    .setLngLat(dataNode.data.latlon)
+                    .addTo(map);
+                map.flyTo({center: dataNode.data.latlon, zoom: 8});
+            }
+            var geocoder = new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken,
+                mapboxgl: mapboxgl
+            });
+            geocoder.on('result', function (e) {
+                var nodeData = editor.getNodeFromId(dataNode.id.toString()).data;
+                nodeData.latlon = e.result.center;
+                editor.updateNodeDataFromId(dataNode.id, nodeData);
+            });
+            // Add the control to the map.
+            $(document.getElementById("node-" + dataNode.id))[0].children[1].children[1].children[1].children[1].appendChild(geocoder.onAdd(map));
+        }
     }
 
     addRerouteImport(dataNode) {
@@ -1528,6 +1588,13 @@ export default class Drawflow {
     }
 
     updateNodeValue(event) {
+        if (event.target.type === "checkbox") {
+            if (event.target.checked === false) {
+                event.target.value = false;
+            } else {
+                event.target.value = true;
+            }
+        }
         var attr = event.target.attributes
         for (var i = 0; i < attr.length; i++) {
             if (attr[i].nodeName.startsWith('df-')) {

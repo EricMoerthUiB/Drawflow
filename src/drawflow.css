@@ -51,6 +51,12 @@
   /*position: absolute;*/
 }
 
+/*.drawflow .drawflow-node .drawflow_content_node_holder {*/
+  /*width: 100%;*/
+  /*display: block;*/
+  /*z-index: -1;*/
+/*}*/
+
 .drawflow .drawflow-node .drawflow_content_node {
   width: 100%;
   display: block;
