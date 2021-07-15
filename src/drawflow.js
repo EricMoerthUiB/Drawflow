@@ -323,35 +323,57 @@ export default class Drawflow {
                     }
                 }
                 var x = e.clientX + 50;
-                var y = e.clientY - 20 - (2*20*k-1);
-
-                console.log(this.ele_selected.children[0].classList[1]);
-                var node;
+                var y = e.clientY - 20 - (40 * k);
                 switch (this.ele_selected.children[0].classList[1]) {
                     case "fa-image":
-                        node = addNodeToDrawFlow("image", x, y);
+                        addNodeToDrawFlow("image", x, y);
                         break;
                     case "fa-paragraph":
-                        node = addNodeToDrawFlow("text", x, y);
+                        addNodeToDrawFlow("text", x, y);
                         break;
                     case "fa-video":
-                        node = addNodeToDrawFlow("video", x, y);
+                        addNodeToDrawFlow("video", x, y);
                         break;
                     case "fa-map-marked-alt":
-                        node = addNodeToDrawFlow("map", x, y);
+                        addNodeToDrawFlow("map", x, y);
                         break;
                     case "fa-cubes":
-                        node = addNodeToDrawFlow("volvis", x, y);
+                        addNodeToDrawFlow("volvis", x, y);
                         break;
                     case "fa-share-alt":
-                        node = addNodeToDrawFlow("decision", x, y);
+                        addNodeToDrawFlow("decision", x, y);
                         break;
                 }
+                // Connect the two nodes
+                this.addConnection(this.ele_selected.parentElement.id.split(";")[0], editor.nodeId - 1, this.ele_selected.parentElement.id.split(";")[1], "input_1");
                 break;
             case 'drawflow-contextMenuSub-Item':
-                // console.log(this.ele_selected.children[0]);
+                let k2 = 0;
+                for (let z = 0; z < this.ele_selected.parentElement.children.length; z++) {
+                    if (this.ele_selected.parentElement.children[z].children[0] === this.ele_selected.children[0]) {
+                        k2 = z;
+                    }
+                }
+                var x = e.clientX - 150 - (40 * k2);
+                var y = e.clientY + 30;
+                console.log(this.ele_selected.parentElement.id.split(";")[0] + "," + (editor.nodeId - 1) + "," + this.ele_selected.parentElement.id.split(";")[1] + "," + "input_1");
+                var connection = "output_2";
+                switch (this.ele_selected.children[0].classList[1]) {
+                    case "fa-paragraph":
+                        addNodeToDrawFlow("subtext", x, y);
+                        connection = "output_1";
+                        break;
+                    case "fa-image":
+                        addNodeToDrawFlow("image", x, y);
+                        break;
+                    case "fa-video":
+                        addNodeToDrawFlow("video", x, y);
+                        break;
+                }
+                this.addConnection(editor.nodeId - 1, this.ele_selected.parentElement.id.split(";")[0],
+                    connection, this.ele_selected.parentElement.id.split(";")[1]);
+                // Connect the two nodes
                 break;
-            default:
         }
         if (e.type === "touchstart") {
             this.pos_x = e.touches[0].clientX;
@@ -589,10 +611,10 @@ export default class Drawflow {
         }
 
         if (this.node_selected || this.connection_selected) {
-
             if (e.target.classList[0] === "output") {
                 var contextMenu = document.createElement('div');
                 contextMenu.classList.add("drawflow-contextMenu");
+                contextMenu.setAttribute("id", e.target.parentElement.parentElement.id.slice(5) + ";" + e.target.classList[1]);
                 var image = document.createElement('div');
                 image.classList.add("drawflow-contextMenu-Item");
                 image.innerHTML = "<i class=\"fas fa-image\"/>";
@@ -627,6 +649,7 @@ export default class Drawflow {
                 }
             } else if (e.target.classList[0] === "inputBottom") {
                 var contextMenu = document.createElement('div');
+                contextMenu.setAttribute("id", e.target.parentElement.parentElement.parentElement.id.slice(5) + ";" + e.target.classList[1]);
                 contextMenu.classList.add("drawflow-contextMenuSub");
                 var image = document.createElement('div');
                 image.classList.add("drawflow-contextMenuSub-Item");
