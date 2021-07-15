@@ -451,7 +451,7 @@ export default class Drawflow {
             this.editor_selected = false;
         }
         if (this.connection === true) {
-            if (ele_last.classList[0] === 'input' || (this.force_first_input && (ele_last.closest(".drawflow_content_node") != null || ele_last.classList[0] === 'drawflow-node'))) {
+            if ((ele_last.classList[0] === 'input' || ele_last.classList[0] === 'inputBottom') || (this.force_first_input && (ele_last.closest(".drawflow_content_node") != null || ele_last.classList[0] === 'drawflow-node'))) {
                 if (this.force_first_input && (ele_last.closest(".drawflow_content_node") != null || ele_last.classList[0] === 'drawflow-node')) {
                     if (ele_last.closest(".drawflow_content_node") != null) {
                         var input_id = ele_last.closest(".drawflow_content_node").parentElement.parentElement.parentElement.id;
@@ -694,6 +694,9 @@ export default class Drawflow {
         this.connection_ele = connection;
         var path = document.createElementNS('http://www.w3.org/2000/svg', "path");
         path.classList.add("main-path");
+        if(ele.classList[0] === "outputTop"){
+            path.classList.add("sub-path");
+        }
         path.setAttributeNS(null, 'd', '');
         // path.innerHTML = 'a';
         connection.classList.add("connection");
@@ -1271,7 +1274,7 @@ export default class Drawflow {
         }
         for (var x = 0; x < num_in_bottom; x++) {
             const input = document.createElement('div');
-            input.classList.add("input");
+            input.classList.add("inputBottom");
             input.classList.add("input_" + (num_in + x + 1));
             json_inputs["input_" + (num_in + x + 1)] = {"connections": [], "type": "inBottom"};
             inputsBottom.appendChild(input);
@@ -1287,7 +1290,7 @@ export default class Drawflow {
         }
         for (var x = 0; x < num_out_top; x++) {
             const output = document.createElement('div');
-            output.classList.add("output");
+            output.classList.add("outputBottom");
             output.classList.add("output_" + (num_out + x + 1));
             json_outputs["output_" + (num_out + x + 1)] = {"connections": [], "type": "outTop"};
             outputsTop.appendChild(output);
@@ -1408,18 +1411,22 @@ export default class Drawflow {
 
         Object.keys(dataNode.inputs).map(function (input_item, index) {
             const input = document.createElement('div');
-            input.classList.add("input");
-            input.classList.add(input_item);
             if (dataNode.inputs[input_item].type === "in") {
+                input.classList.add("input");
                 inputs.appendChild(input);
             } else {
+                input.classList.add("inputBottom");
                 inputsBottom.appendChild(input);
             }
+            input.classList.add(input_item);
             Object.keys(dataNode.inputs[input_item].connections).map(function (output_item, index) {
-
                 var connection = document.createElementNS('http://www.w3.org/2000/svg', "svg");
                 var path = document.createElementNS('http://www.w3.org/2000/svg', "path");
                 path.classList.add("main-path");
+                // console.log(dataNode.inputs[input_item].type );
+                if(dataNode.inputs[input_item].type === "inBottom"){
+                    path.classList.add("sub-path");
+                }
                 path.setAttributeNS(null, 'd', '');
                 // path.innerHTML = 'a';
                 connection.classList.add("connection");
@@ -1435,15 +1442,15 @@ export default class Drawflow {
         });
 
         for (var x = 0; x < Object.keys(dataNode.outputs).length; x++) {
-            console.log();
             const output = document.createElement('div');
-            output.classList.add("output");
-            output.classList.add("output_" + (x + 1));
             if (dataNode.outputs[Object.keys(dataNode.outputs)[x]].type === "out") {
+                output.classList.add("output");
                 outputs.appendChild(output);
             } else {
+                output.classList.add("outputTop");
                 outputsTop.appendChild(output);
             }
+            output.classList.add("output_" + (x + 1));
         }
 
         const contentHolder = document.createElement('div');
