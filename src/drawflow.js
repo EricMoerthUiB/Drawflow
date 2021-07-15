@@ -473,11 +473,13 @@ export default class Drawflow {
                     }
                     var input_class = ele_last.classList[1];
                 }
+
                 var output_id = this.ele_selected.parentElement.parentElement.id;
                 if (this.ele_selected.parentElement.parentElement.parentElement.classList[0] !== "parent-node") {
                     output_id = this.ele_selected.parentElement.parentElement.parentElement.id;
                 }
                 var output_class = this.ele_selected.classList[1];
+
                 if (output_id !== input_id && input_class !== false) {
                     if (this.container.querySelectorAll('.connection.node_in_' + input_id + '.node_out_' + output_id + '.' + output_class + '.' + input_class).length === 0) {
                         // Conection no exist save connection
@@ -488,24 +490,31 @@ export default class Drawflow {
                         this.connection_ele.classList.add(input_class);
                         var id_input = input_id.slice(5);
                         var id_output = output_id.slice(5);
+                        if (this.drawflow.drawflow[this.module].data[id_input].inputs[input_class].type === "in" &&
+                            this.drawflow.drawflow[this.module].data[id_output].outputs[output_class].type === "out" ||
+                            this.drawflow.drawflow[this.module].data[id_input].inputs[input_class].type === "inBottom" &&
+                            this.drawflow.drawflow[this.module].data[id_output].outputs[output_class].type === "outTop") {
 
-                        this.drawflow.drawflow[this.module].data[id_output].outputs[output_class].connections.push({
-                            "node": id_input,
-                            "output": input_class
-                        });
-                        this.drawflow.drawflow[this.module].data[id_input].inputs[input_class].connections.push({
-                            "node": id_output,
-                            "input": output_class
-                        });
-                        this.updateConnectionNodes('node-' + id_output);
-                        this.updateConnectionNodes('node-' + id_input);
-                        this.dispatch('connectionCreated', {
-                            output_id: id_output,
-                            input_id: id_input,
-                            output_class: output_class,
-                            input_class: input_class
-                        });
-
+                            this.drawflow.drawflow[this.module].data[id_output].outputs[output_class].connections.push({
+                                "node": id_input,
+                                "output": input_class
+                            });
+                            this.drawflow.drawflow[this.module].data[id_input].inputs[input_class].connections.push({
+                                "node": id_output,
+                                "input": output_class
+                            });
+                            this.updateConnectionNodes('node-' + id_output);
+                            this.updateConnectionNodes('node-' + id_input);
+                            this.dispatch('connectionCreated', {
+                                output_id: id_output,
+                                input_id: id_input,
+                                output_class: output_class,
+                                input_class: input_class
+                            });
+                        } else {
+                            this.dispatch('connectionCancel', true);
+                            this.connection_ele.remove();
+                        }
                     } else {
                         this.dispatch('connectionCancel', true);
                         this.connection_ele.remove();
@@ -729,7 +738,6 @@ export default class Drawflow {
                     exist = true;
                 }
             }
-            // Check connection exist
             if (exist === false) {
                 //Create Connection
                 this.drawflow.drawflow[nodeOneModule].data[id_output].outputs[output_class].connections.push({
