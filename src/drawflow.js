@@ -886,6 +886,9 @@ export default class Drawflow {
                     var connection = document.createElementNS('http://www.w3.org/2000/svg', "svg");
                     var path = document.createElementNS('http://www.w3.org/2000/svg', "path");
                     path.classList.add("main-path");
+                    if (this.drawflow.drawflow[nodeOneModule].data[id_input].inputs[input_class].type === "inBottom") {
+                        path.classList.add("sub-path");
+                    }
                     path.setAttributeNS(null, 'd', '');
                     // path.innerHTML = 'a';
                     connection.classList.add("connection");
