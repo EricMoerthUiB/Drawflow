@@ -20,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+            <state relative-caret-position="408">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -29,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/drawflow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="878" column="107" lean-forward="true" selection-start-line="878" selection-start-column="107" selection-end-line="878" selection-end-column="107" />
+            <state relative-caret-position="443">
+              <caret line="1508" column="29" lean-forward="true" selection-start-line="1508" selection-start-column="29" selection-end-line="1508" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -66,20 +66,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>contextmenu</find>
-      <find>click</find>
-      <find>node_selected</find>
-      <find>deletebox</find>
-      <find>contextmenuDel</find>
-      <find>contextMe</find>
-      <find>drawflow</find>
-      <find>drawflow-delete</find>
       <find>contextMenu</find>
       <find>.remove(</find>
       <find>.remove(&quot;sele</find>
       <find>fas-</find>
       <find>contextm</find>
-      <find>console.log</find>
       <find>context</find>
       <find>connect</find>
       <find>split</find>
@@ -96,6 +87,15 @@
       <find>drawConnect</find>
       <find>addConnect</find>
       <find>.type</find>
+      <find>export(</find>
+      <find>this.drawf</find>
+      <find>inputs</find>
+      <find>updateNodeValue</find>
+      <find>console.lof</find>
+      <find>console.log</find>
+      <find>cursor</find>
+      <find>grab</find>
+      <find>drawflow</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,6 +131,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,7 +153,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -198,12 +198,17 @@
       <workItem from="1626253293681" duration="32542000" />
       <workItem from="1626383931345" duration="314000" />
       <workItem from="1626384276068" duration="606000" />
-      <workItem from="1626416912869" duration="1540000" />
+      <workItem from="1626416912869" duration="3037000" />
+      <workItem from="1627888451660" duration="2824000" />
+      <workItem from="1627972656294" duration="2627000" />
+      <workItem from="1628068871498" duration="1809000" />
+      <workItem from="1628153816172" duration="2911000" />
+      <workItem from="1628235098772" duration="1243000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35002000" />
+    <option name="totallyTimeSpent" value="47913000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -275,8 +280,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        <state relative-caret-position="408">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -303,8 +308,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/drawflow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="878" column="107" lean-forward="true" selection-start-line="878" selection-start-column="107" selection-end-line="878" selection-end-column="107" />
+        <state relative-caret-position="443">
+          <caret line="1508" column="29" lean-forward="true" selection-start-line="1508" selection-start-column="29" selection-end-line="1508" selection-end-column="29" />
         </state>
       </provider>
     </entry>

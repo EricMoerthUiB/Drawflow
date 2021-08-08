@@ -359,7 +359,7 @@ export default class Drawflow {
                 }
                 var x = e.clientX - 150 - (40 * k2);
                 var y = e.clientY + 30;
-                console.log(this.ele_selected.parentElement.id.split(";")[0] + "," + (editor.nodeId - 1) + "," + this.ele_selected.parentElement.id.split(";")[1] + "," + "input_1");
+                // console.log(this.ele_selected.parentElement.id.split(";")[0] + "," + (editor.nodeId - 1) + "," + this.ele_selected.parentElement.id.split(";")[1] + "," + "input_1");
                 var connection = "output_2";
                 switch (this.ele_selected.children[0].classList[1]) {
                     case "fa-paragraph":
@@ -1744,7 +1744,7 @@ export default class Drawflow {
         for (var i = 0; i < attr.length; i++) {
             if (attr[i].nodeName.startsWith('df-')) {
                 var keys = attr[i].nodeName.slice(3).split("-");
-                var target = this.drawflow.drawflow[this.module].data[event.target.closest(".drawflow_content_node").parentElement.id.slice(5)].data;
+                var target = this.drawflow.drawflow[this.module].data[event.target.closest(".drawflow_content_node").parentElement.parentElement.id.slice(5)].data;
                 for (var index = 0; index < keys.length - 1; index += 1) {
                     if (target[keys[index]] == null) {
                         target[keys[index]] = {};
