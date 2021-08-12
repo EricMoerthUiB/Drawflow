@@ -323,7 +323,7 @@ export default class Drawflow {
                     }
                 }
                 var x = e.clientX + 50;
-                var y = e.clientY  - (37 * k);
+                var y = e.clientY - (37 * k);
                 switch (this.ele_selected.children[0].classList[1]) {
                     case "fa-image":
                         addNodeToDrawFlow("image", x, y);
@@ -546,7 +546,12 @@ export default class Drawflow {
                         this.connection_ele.classList.add(input_class);
                         var id_input = input_id.slice(5);
                         var id_output = output_id.slice(5);
-                        if (this.drawflow.drawflow[this.module].data[id_input].inputs[input_class].type === "in" &&
+
+                        if (this.drawflow.drawflow[this.module].data[id_output].name !== "decision" &&
+                            this.drawflow.drawflow[this.module].data[id_output].outputs[output_class].connections.length > 0) {
+                            this.dispatch('connectionCancel', true);
+                            this.connection_ele.remove();
+                        } else if (this.drawflow.drawflow[this.module].data[id_input].inputs[input_class].type === "in" &&
                             this.drawflow.drawflow[this.module].data[id_output].outputs[output_class].type === "out" ||
                             this.drawflow.drawflow[this.module].data[id_input].inputs[input_class].type === "inBottom" &&
                             this.drawflow.drawflow[this.module].data[id_output].outputs[output_class].type === "outTop") {
@@ -861,14 +866,16 @@ export default class Drawflow {
         var nodeOneModule = this.getModuleFromNodeId(id_output);
         var nodeTwoModule = this.getModuleFromNodeId(id_input);
         if (nodeOneModule === nodeTwoModule) {
-
             var dataNode = this.getNodeFromId(id_output);
             var exist = false;
             for (var checkOutput in dataNode.outputs[output_class].connections) {
-                var connectionSearch = dataNode.outputs[output_class].connections[checkOutput]
-                if (connectionSearch.node == id_input && connectionSearch.output == input_class) {
+                var connectionSearch = dataNode.outputs[output_class].connections[checkOutput];
+                if (connectionSearch.node === id_input && connectionSearch.output === input_class) {
                     exist = true;
                 }
+            }
+            if ("decision" !== dataNode.name && dataNode.outputs[output_class].connections.length > 0) {
+                exists = true;
             }
             if (exist === false) {
                 //Create Connection
