@@ -195,7 +195,8 @@ export default class Drawflow {
             if (e.button === 0) {
                 this.contextmenuDel();
             }
-            if (e.target.closest(".drawflow_content_node") != null) {
+            // console.log(e.target);
+            if (e.target.closest(".drawflow_content_node") != null && e.target.closest(".vol") === null) {
                 this.ele_selected = e.target.closest(".drawflow_content_node").parentElement.parentElement;
             }
         }
