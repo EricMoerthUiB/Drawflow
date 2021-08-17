@@ -200,10 +200,10 @@ export default class Drawflow {
                 this.ele_selected = e.target.closest(".drawflow_content_node").parentElement.parentElement;
             }
         }
-        if (this.ele_selected.classList[0] === "fas" || this.ele_selected.classList[0] === "far" ) {// for Icon buttons
+        if (this.ele_selected.classList[0] === "fas" || this.ele_selected.classList[0] === "far") {// for Icon buttons
             this.ele_selected = this.ele_selected.parentElement;
         }
-        console.log("Clicked Element: " + this.ele_selected.classList[0]);
+        // console.log("Clicked Element: " + this.ele_selected.classList[0]);
         switch (this.ele_selected.classList[0]) {
             case 'drawflow-node':
                 if (this.node_selected != null) {
@@ -318,44 +318,49 @@ export default class Drawflow {
                 }
                 break;
             case 'drawflow-contextMenu-Item':
-                let k = 0;
-                for (let z = 0; z < this.ele_selected.parentElement.children.length; z++) {
-                    if (this.ele_selected.parentElement.children[z].children[0] === this.ele_selected.children[0]) {
-                        k = z;
-                    }
-                }
-                var x = e.clientX + 50;
-                var y = e.clientY - (37 * k);
+                var nodeOrigin = this.getNodeFromId(editor.nodeId - 1);
+                var x = nodeOrigin.pos_x + 720;
+                var y = nodeOrigin.pos_y+50;
+                console.log(nodeOrigin);
+                console.log("X: " + x + " Y: " + y);
+                // Has to be zoom dependent!!
                 var nodeClass = this.getNodeFromId(this.ele_selected.parentElement.id.split(";")[0]).class;
-                console.log("Class: " + this.ele_selected.children[0].classList[1] + " nodeClass: " + nodeClass);
+                // console.log("Class: " + this.ele_selected.children[0].classList[1] + " nodeClass: " + nodeClass);
                 if (this.ele_selected.children[0].classList[1] !== "fa-clone" || this.ele_selected.children[0].classList[1] === "fa-clone" && nodeClass !== "start") {
                     switch (this.ele_selected.children[0].classList[1]) {
                         case "fa-image":
-                            addNodeToDrawFlow("image", x, y);
+                            addNodeToDrawFlowFixedPos("image", x, y);
                             break;
                         case "fa-paragraph":
-                            addNodeToDrawFlow("text", x, y);
+                            addNodeToDrawFlowFixedPos("text", x, y);
                             break;
                         case "fa-video":
-                            addNodeToDrawFlow("video", x, y);
+                            addNodeToDrawFlowFixedPos("video", x, y);
                             break;
                         case "fa-map-marked-alt":
-                            addNodeToDrawFlow("map", x, y);
+                            addNodeToDrawFlowFixedPos("map", x, y);
                             break;
-                        case "fa-cubes":
-                            addNodeToDrawFlow("volvis", x, y);
+                        case "fa-cube":
+                            addNodeToDrawFlowFixedPos("volvis", x, y);
                             break;
                         case "fa-share-alt":
-                            addNodeToDrawFlow("decision", x, y);
+                            addNodeToDrawFlowFixedPos("decision", x, y);
                             break;
                         case "fa-stop-circle":
-                            addNodeToDrawFlow("stop", x, y);
+                            addNodeToDrawFlowFixedPos("stop", x, y);
                         case "fa-clone":
                             if (nodeClass !== "start") {
-                                addNodeToDrawFlow(nodeClass, x, y);
+                                addNodeToDrawFlowFixedPos(nodeClass, x, y);
                             }
                             break;
                     }
+                    // place the new node in focus
+                    // var node = this.getNodeFromId(editor.nodeId - 1);
+                    // this.canvas_x = -node.pos_x + (200 * this.zoom);
+                    // this.canvas_y = node.pos_y/2;
+                    // this.dispatch('translate', {x: x, y: y});
+                    // this.precanvas.style.transform = "translate(" + this.canvas_x + "px, " + this.canvas_y + "px) scale(" + this.zoom + ")";
+                    // add connection to the new node
                     this.addConnection(this.ele_selected.parentElement.id.split(";")[0], editor.nodeId - 1, this.ele_selected.parentElement.id.split(";")[1], "input_1");
                 }
                 // Connect the two nodes
@@ -416,8 +421,8 @@ export default class Drawflow {
             this.updateConnection(e_pos_x, e_pos_y);
         }
         if (this.editor_selected) {
-            x = this.canvas_x + (-(this.pos_x - e_pos_x))
-            y = this.canvas_y + (-(this.pos_y - e_pos_y))
+            x = this.canvas_x + (-(this.pos_x - e_pos_x));
+            y = this.canvas_y + (-(this.pos_y - e_pos_y));
             this.dispatch('translate', {x: x, y: y});
             this.precanvas.style.transform = "translate(" + x + "px, " + y + "px) scale(" + this.zoom + ")";
         }
