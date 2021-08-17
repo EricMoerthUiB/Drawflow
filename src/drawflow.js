@@ -200,9 +200,10 @@ export default class Drawflow {
                 this.ele_selected = e.target.closest(".drawflow_content_node").parentElement.parentElement;
             }
         }
-        if (this.ele_selected.classList[0] === "fas") {// for Icon buttons
+        if (this.ele_selected.classList[0] === "fas" || this.ele_selected.classList[0] === "far" ) {// for Icon buttons
             this.ele_selected = this.ele_selected.parentElement;
         }
+        console.log("Clicked Element: " + this.ele_selected.classList[0]);
         switch (this.ele_selected.classList[0]) {
             case 'drawflow-node':
                 if (this.node_selected != null) {
@@ -325,31 +326,39 @@ export default class Drawflow {
                 }
                 var x = e.clientX + 50;
                 var y = e.clientY - (37 * k);
-                switch (this.ele_selected.children[0].classList[1]) {
-                    case "fa-image":
-                        addNodeToDrawFlow("image", x, y);
-                        break;
-                    case "fa-paragraph":
-                        addNodeToDrawFlow("text", x, y);
-                        break;
-                    case "fa-video":
-                        addNodeToDrawFlow("video", x, y);
-                        break;
-                    case "fa-map-marked-alt":
-                        addNodeToDrawFlow("map", x, y);
-                        break;
-                    case "fa-cubes":
-                        addNodeToDrawFlow("volvis", x, y);
-                        break;
-                    case "fa-share-alt":
-                        addNodeToDrawFlow("decision", x, y);
-                        break;
-                    case "fa-stop-circle":
-                        addNodeToDrawFlow("stop", x, y);
-                        break;
+                var nodeClass = this.getNodeFromId(this.ele_selected.parentElement.id.split(";")[0]).class;
+                console.log("Class: " + this.ele_selected.children[0].classList[1] + " nodeClass: " + nodeClass);
+                if (this.ele_selected.children[0].classList[1] !== "fa-clone" || this.ele_selected.children[0].classList[1] === "fa-clone" && nodeClass !== "start") {
+                    switch (this.ele_selected.children[0].classList[1]) {
+                        case "fa-image":
+                            addNodeToDrawFlow("image", x, y);
+                            break;
+                        case "fa-paragraph":
+                            addNodeToDrawFlow("text", x, y);
+                            break;
+                        case "fa-video":
+                            addNodeToDrawFlow("video", x, y);
+                            break;
+                        case "fa-map-marked-alt":
+                            addNodeToDrawFlow("map", x, y);
+                            break;
+                        case "fa-cubes":
+                            addNodeToDrawFlow("volvis", x, y);
+                            break;
+                        case "fa-share-alt":
+                            addNodeToDrawFlow("decision", x, y);
+                            break;
+                        case "fa-stop-circle":
+                            addNodeToDrawFlow("stop", x, y);
+                        case "fa-clone":
+                            if (nodeClass !== "start") {
+                                addNodeToDrawFlow(nodeClass, x, y);
+                            }
+                            break;
+                    }
+                    this.addConnection(this.ele_selected.parentElement.id.split(";")[0], editor.nodeId - 1, this.ele_selected.parentElement.id.split(";")[1], "input_1");
                 }
                 // Connect the two nodes
-                this.addConnection(this.ele_selected.parentElement.id.split(";")[0], editor.nodeId - 1, this.ele_selected.parentElement.id.split(";")[1], "input_1");
                 break;
             case 'drawflow-contextMenuSub-Item':
                 let k2 = 0;
@@ -636,9 +645,13 @@ export default class Drawflow {
                 var map = document.createElement('div');
                 map.classList.add("drawflow-contextMenu-Item");
                 map.innerHTML = "<i class=\"fas fa-map-marked-alt\"/>";
+                var copy = document.createElement('div');
+                copy.classList.add("drawflow-contextMenu-Item");
+                copy.classList.add("highlight");
+                copy.innerHTML = "<i class=\"far fa-clone\"/>";
                 var threeD = document.createElement('div');
                 threeD.classList.add("drawflow-contextMenu-Item");
-                threeD.innerHTML = "<i class=\"fas fa-cubes\"/>";
+                threeD.innerHTML = "<i class=\"fas fa-cube\"/>";
                 var decision = document.createElement('div');
                 decision.classList.add("drawflow-contextMenu-Item");
                 decision.innerHTML = "<i class=\"fas fa-share-alt\"/>";
@@ -652,6 +665,7 @@ export default class Drawflow {
                 contextMenu.appendChild(threeD);
                 contextMenu.appendChild(decision);
                 contextMenu.appendChild(stop);
+                contextMenu.appendChild(copy);
                 if (this.node_selected) {
                     this.node_selected.appendChild(contextMenu);
                 }
@@ -876,7 +890,7 @@ export default class Drawflow {
                 }
             }
             if ("decision" !== dataNode.name && dataNode.outputs[output_class].connections.length > 0) {
-                exists = true;
+                exist = true;
             }
             if (exist === false) {
                 //Create Connection

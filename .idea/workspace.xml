@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6691ab63-8c87-42d4-9ccf-682f9d4800e0" name="Default Changelist" comment="" />
+    <list default="true" id="6691ab63-8c87-42d4-9ccf-682f9d4800e0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/dist/drawflow.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/drawflow.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/drawflow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawflow.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/drawflow.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="201" column="9" lean-forward="true" selection-start-line="201" selection-start-column="9" selection-end-line="201" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>contextM</find>
+      <find>drawflow-contextMenu-Item&quot;</find>
+      <find>contextmenu</find>
+      <find>addConnection</find>
+      <find>exists</find>
+      <find>console.log</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/drawflow.js" />
+      </list>
+    </option>
   </component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
@@ -41,6 +74,11 @@
             <path>
               <item name="Drawflow" type="b2602c69:ProjectViewProjectNode" />
               <item name="Drawflow" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Drawflow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Drawflow" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -104,7 +142,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="412000" />
+    <option name="totallyTimeSpent" value="2601000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2567" y="-7" width="2062" height="1126" extended-state="6" />
@@ -115,8 +153,8 @@
       <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.25224775" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5021075" side_tool="true" weight="0.32998884" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49789253" visible="true" weight="0.32954547" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5024975" side_tool="true" weight="0.32954547" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4975025" weight="0.32954547" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32998884" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -167,5 +205,14 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/drawflow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="201" column="9" lean-forward="true" selection-start-line="201" selection-start-column="9" selection-end-line="201" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
