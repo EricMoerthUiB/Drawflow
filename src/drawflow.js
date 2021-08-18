@@ -318,9 +318,9 @@ export default class Drawflow {
                 }
                 break;
             case 'drawflow-contextMenu-Item':
-                var nodeOrigin = this.getNodeFromId(editor.nodeId - 1);
-                var x = nodeOrigin.pos_x + 720;
-                var y = nodeOrigin.pos_y+50;
+                var nodeOrigin = this.getNodeFromId(this.ele_selected.parentElement.id.split(";")[0]);
+                var x = nodeOrigin.pos_x + 450;
+                var y = nodeOrigin.pos_y;
                 console.log(nodeOrigin);
                 console.log("X: " + x + " Y: " + y);
                 // Has to be zoom dependent!!
@@ -366,26 +366,21 @@ export default class Drawflow {
                 // Connect the two nodes
                 break;
             case 'drawflow-contextMenuSub-Item':
-                let k2 = 0;
-                for (let z = 0; z < this.ele_selected.parentElement.children.length; z++) {
-                    if (this.ele_selected.parentElement.children[z].children[0] === this.ele_selected.children[0]) {
-                        k2 = z;
-                    }
-                }
-                var x = e.clientX - 150 - (40 * k2);
-                var y = e.clientY + 30;
+                var nodeOrigin = this.getNodeFromId(this.ele_selected.parentElement.id.split(";")[0]);
+                var x = nodeOrigin.pos_x;
+                var y = nodeOrigin.pos_y+300;
                 // console.log(this.ele_selected.parentElement.id.split(";")[0] + "," + (editor.nodeId - 1) + "," + this.ele_selected.parentElement.id.split(";")[1] + "," + "input_1");
                 var connection = "output_2";
                 switch (this.ele_selected.children[0].classList[1]) {
                     case "fa-paragraph":
-                        addNodeToDrawFlow("subtext", x, y);
+                        addNodeToDrawFlowFixedPos("subtext", x, y);
                         connection = "output_1";
                         break;
                     case "fa-image":
-                        addNodeToDrawFlow("image", x, y);
+                        addNodeToDrawFlowFixedPos("image", x, y);
                         break;
                     case "fa-video":
-                        addNodeToDrawFlow("video", x, y);
+                        addNodeToDrawFlowFixedPos("video", x, y);
                         break;
                 }
                 this.addConnection(editor.nodeId - 1, this.ele_selected.parentElement.id.split(";")[0],
