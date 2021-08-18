@@ -350,13 +350,11 @@ export default class Drawflow {
                             addNodeToDrawFlowFixedPos("stop", x, y);
                             break;
                         case "fa-clone":
-                            if (nodeClass !== "start") {
-                                addNodeToDrawFlowFixedPos(nodeClass, x, y);
-                            }
+                            copyNodeToDrawflowFixedPos(this.ele_selected.parentElement.id.split(";")[0], x, y);
                             break;
                     }
                     this.canvas_x = (-x + 600) * this.zoom;
-                    this.canvas_y = ((-y/4)+50)*this.zoom;
+                    this.canvas_y = ((-y / 4) + 50) * this.zoom;
                     this.dispatch('translate', {x: x, y: y});
                     this.precanvas.style.transform = "translate(" + this.canvas_x + "px, " + this.canvas_y + "px) scale(" + this.zoom + ")";
                     this.addConnection(this.ele_selected.parentElement.id.split(";")[0], editor.nodeId - 1, this.ele_selected.parentElement.id.split(";")[1], "input_1");
@@ -366,7 +364,7 @@ export default class Drawflow {
             case 'drawflow-contextMenuSub-Item':
                 var nodeOrigin = this.getNodeFromId(this.ele_selected.parentElement.id.split(";")[0]);
                 var x = nodeOrigin.pos_x;
-                var y = nodeOrigin.pos_y+300;
+                var y = nodeOrigin.pos_y + 300;
                 // console.log(this.ele_selected.parentElement.id.split(";")[0] + "," + (editor.nodeId - 1) + "," + this.ele_selected.parentElement.id.split(";")[1] + "," + "input_1");
                 var connection = "output_2";
                 switch (this.ele_selected.children[0].classList[1]) {
@@ -382,7 +380,7 @@ export default class Drawflow {
                         break;
                 }
                 this.canvas_x = (-x + 600) * this.zoom;
-                this.canvas_y = ((-y/4)+50)*this.zoom;
+                this.canvas_y = ((-y / 4) + 50) * this.zoom;
                 this.dispatch('translate', {x: x, y: y});
                 this.precanvas.style.transform = "translate(" + this.canvas_x + "px, " + this.canvas_y + "px) scale(" + this.zoom + ")";
                 this.addConnection(editor.nodeId - 1, this.ele_selected.parentElement.id.split(";")[0],
@@ -629,7 +627,6 @@ export default class Drawflow {
         if (this.precanvas.getElementsByClassName("drawflow-contextMenu").length) {
             this.precanvas.getElementsByClassName("drawflow-contextMenu")[0].remove()
         }
-
         if (this.node_selected || this.connection_selected) {
             if (e.target.classList[0] === "output") {
                 var contextMenu = document.createElement('div');
@@ -667,7 +664,9 @@ export default class Drawflow {
                 contextMenu.appendChild(threeD);
                 contextMenu.appendChild(decision);
                 contextMenu.appendChild(stop);
-                contextMenu.appendChild(copy);
+                if (!["start", "decision"].includes(this.getNodeFromId(e.target.parentElement.parentElement.id.split("-")[1]).name)) {
+                    contextMenu.appendChild(copy);
+                }
                 if (this.node_selected) {
                     this.node_selected.appendChild(contextMenu);
                 }

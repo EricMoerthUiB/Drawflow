@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/drawflow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="349" column="34" selection-start-line="349" selection-start-column="34" selection-end-line="349" selection-end-column="34" />
+            <state relative-caret-position="443">
+              <caret line="665" column="46" lean-forward="true" selection-start-line="665" selection-start-column="46" selection-end-line="665" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -68,6 +68,9 @@
       <find>stop</find>
       <find>stop</find>
       <find>contextMenu</find>
+      <find>clear</find>
+      <find>addNodeToDrawFlowFixedPos</find>
+      <find>copy</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -92,7 +95,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
+    <option name="x" value="-2569" />
     <option name="y" value="-9" />
     <option name="width" value="2578" />
     <option name="height" value="1408" />
@@ -175,15 +178,15 @@
       <workItem from="1628796962161" duration="595000" />
       <workItem from="1628834449032" duration="3842000" />
       <workItem from="1628857169079" duration="238000" />
-      <workItem from="1629267966396" duration="2505000" />
+      <workItem from="1629267966396" duration="3639000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8948000" />
+    <option name="totallyTimeSpent" value="10082000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
+    <frame x="-2567" y="-7" width="2062" height="1126" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" order="0" side_tool="true" />
@@ -192,7 +195,7 @@
       <window_info id="npm" order="3" side_tool="true" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.502997" side_tool="true" weight="0.23863636" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.497003" weight="0.23863636" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.497003" visible="true" weight="0.23863636" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32998884" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -247,8 +250,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/drawflow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="349" column="34" selection-start-line="349" selection-start-column="34" selection-end-line="349" selection-end-column="34" />
+        <state relative-caret-position="443">
+          <caret line="665" column="46" lean-forward="true" selection-start-line="665" selection-start-column="46" selection-end-line="665" selection-end-column="46" />
         </state>
       </provider>
     </entry>
