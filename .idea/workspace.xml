@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6691ab63-8c87-42d4-9ccf-682f9d4800e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/dist/drawflow.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/drawflow.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/drawflow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawflow.js" afterDir="false" />
-    </list>
+    <list default="true" id="6691ab63-8c87-42d4-9ccf-682f9d4800e0" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/drawflow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="665" column="46" lean-forward="true" selection-start-line="665" selection-start-column="46" selection-end-line="665" selection-end-column="46" />
+            <state relative-caret-position="491">
+              <caret line="667" column="50" lean-forward="true" selection-start-line="667" selection-start-column="50" selection-end-line="667" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -65,7 +62,6 @@
       <find>addNodeTODraw</find>
       <find>console.lo</find>
       <find>path</find>
-      <find>stop</find>
       <find>stop</find>
       <find>contextMenu</find>
       <find>clear</find>
@@ -178,12 +174,12 @@
       <workItem from="1628796962161" duration="595000" />
       <workItem from="1628834449032" duration="3842000" />
       <workItem from="1628857169079" duration="238000" />
-      <workItem from="1629267966396" duration="3639000" />
+      <workItem from="1629267966396" duration="3893000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10082000" />
+    <option name="totallyTimeSpent" value="10336000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2567" y="-7" width="2062" height="1126" extended-state="6" />
@@ -195,7 +191,7 @@
       <window_info id="npm" order="3" side_tool="true" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.502997" side_tool="true" weight="0.23863636" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.497003" visible="true" weight="0.23863636" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.497003" weight="0.23863636" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32998884" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -250,8 +246,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/drawflow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="665" column="46" lean-forward="true" selection-start-line="665" selection-start-column="46" selection-end-line="665" selection-end-column="46" />
+        <state relative-caret-position="491">
+          <caret line="667" column="50" lean-forward="true" selection-start-line="667" selection-start-column="50" selection-end-line="667" selection-end-column="50" />
         </state>
       </provider>
     </entry>
