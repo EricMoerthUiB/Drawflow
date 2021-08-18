@@ -321,8 +321,8 @@ export default class Drawflow {
                 var nodeOrigin = this.getNodeFromId(this.ele_selected.parentElement.id.split(";")[0]);
                 var x = nodeOrigin.pos_x + 450;
                 var y = nodeOrigin.pos_y;
-                console.log(nodeOrigin);
-                console.log("X: " + x + " Y: " + y);
+                // console.log(nodeOrigin);
+                // console.log("X: " + x + " Y: " + y);
                 // Has to be zoom dependent!!
                 var nodeClass = this.getNodeFromId(this.ele_selected.parentElement.id.split(";")[0]).class;
                 // console.log("Class: " + this.ele_selected.children[0].classList[1] + " nodeClass: " + nodeClass);
@@ -348,19 +348,17 @@ export default class Drawflow {
                             break;
                         case "fa-stop-circle":
                             addNodeToDrawFlowFixedPos("stop", x, y);
+                            break;
                         case "fa-clone":
                             if (nodeClass !== "start") {
                                 addNodeToDrawFlowFixedPos(nodeClass, x, y);
                             }
                             break;
                     }
-                    // place the new node in focus
-                    // var node = this.getNodeFromId(editor.nodeId - 1);
-                    // this.canvas_x = -node.pos_x + (200 * this.zoom);
-                    // this.canvas_y = node.pos_y/2;
-                    // this.dispatch('translate', {x: x, y: y});
-                    // this.precanvas.style.transform = "translate(" + this.canvas_x + "px, " + this.canvas_y + "px) scale(" + this.zoom + ")";
-                    // add connection to the new node
+                    this.canvas_x = (-x + 600) * this.zoom;
+                    this.canvas_y = ((-y/4)+50)*this.zoom;
+                    this.dispatch('translate', {x: x, y: y});
+                    this.precanvas.style.transform = "translate(" + this.canvas_x + "px, " + this.canvas_y + "px) scale(" + this.zoom + ")";
                     this.addConnection(this.ele_selected.parentElement.id.split(";")[0], editor.nodeId - 1, this.ele_selected.parentElement.id.split(";")[1], "input_1");
                 }
                 // Connect the two nodes
@@ -383,6 +381,10 @@ export default class Drawflow {
                         addNodeToDrawFlowFixedPos("video", x, y);
                         break;
                 }
+                this.canvas_x = (-x + 600) * this.zoom;
+                this.canvas_y = ((-y/4)+50)*this.zoom;
+                this.dispatch('translate', {x: x, y: y});
+                this.precanvas.style.transform = "translate(" + this.canvas_x + "px, " + this.canvas_y + "px) scale(" + this.zoom + ")";
                 this.addConnection(editor.nodeId - 1, this.ele_selected.parentElement.id.split(";")[0],
                     connection, this.ele_selected.parentElement.id.split(";")[1]);
                 // Connect the two nodes
