@@ -346,14 +346,14 @@ export default class Drawflow {
                         case "fa-share-alt":
                             addNodeToDrawFlowFixedPos("decision", x, y);
                             break;
-                        case "fa-stop-circle":
-                            addNodeToDrawFlowFixedPos("stop", x, y);
-                            break;
+                        // case "fa-stop-circle":
+                        //     addNodeToDrawFlowFixedPos("stop", x, y);
+                        //     break;
                         case "fa-clone":
                             copyNodeToDrawflowFixedPos(this.ele_selected.parentElement.id.split(";")[0], x, y);
                             break;
                     }
-                    this.canvas_x = -x * this.zoom + 600* this.zoom;
+                    this.canvas_x = -x * this.zoom + 600 * this.zoom;
                     this.canvas_y = -y * this.zoom + 300 * this.zoom;
                     this.dispatch('translate', {x: x, y: y});
                     $(document.getElementsByClassName("drawflow"))[0].classList.add("smooth");
@@ -383,7 +383,7 @@ export default class Drawflow {
                         break;
                         break;
                 }
-                this.canvas_x = -x * this.zoom + 600* this.zoom;
+                this.canvas_x = -x * this.zoom + 600 * this.zoom;
                 this.canvas_y = -y * this.zoom + 300 * this.zoom;
                 this.dispatch('translate', {x: x, y: y});
                 $(document.getElementsByClassName("drawflow"))[0].classList.add("smooth");
@@ -660,16 +660,16 @@ export default class Drawflow {
                 var decision = document.createElement('div');
                 decision.classList.add("drawflow-contextMenu-Item");
                 decision.innerHTML = "<i class=\"fas fa-share-alt\"/>";
-                var stop = document.createElement('div');
-                stop.classList.add("drawflow-contextMenu-Item");
-                stop.innerHTML = "<i class=\"fas fa-stop-circle\"/>";
+                // var stop = document.createElement('div');
+                // stop.classList.add("drawflow-contextMenu-Item");
+                // stop.innerHTML = "<i class=\"fas fa-stop-circle\"/>";
                 contextMenu.appendChild(image);
                 contextMenu.appendChild(video);
                 contextMenu.appendChild(text);
                 contextMenu.appendChild(map);
                 contextMenu.appendChild(threeD);
                 contextMenu.appendChild(decision);
-                contextMenu.appendChild(stop);
+                // contextMenu.appendChild(stop);
                 if (!["start", "decision"].includes(this.getNodeFromId(e.target.parentElement.parentElement.id.split("-")[1]).name)) {
                     contextMenu.appendChild(copy);
                 }
@@ -2193,7 +2193,23 @@ export default class Drawflow {
 
     clearModuleSelected() {
         this.precanvas.innerHTML = "";
-        this.drawflow.drawflow[this.module] = {"data": {}};
+        this.drawflow.drawflow[this.module] = {
+            "data": {
+                "2": {
+                    "id": 2,
+                    "name": "start",
+                    "data": {"title": "Title", "subtitle": "subtitle"},
+                    "class": "start",
+                    "html": "\n          <div style=\"width: 360px; height: 180px;\">\n<!--            <p>Enter Title</p>-->\n             <input type=\"text\" df-title style=\"background-color: #222222; border: none; height: 30px; width: 250px;\n             margin-top: 50px; margin-left: 50px; color: white; font-size: 25px; text-align: center\">\n<!--             <p>Enter Subtitle</p>-->\n              <input type=\"text\" df-subtitle style=\"background-color: #222222; border: none; height: 30px; width: 150px;\n               margin-top: 20px; margin-left: 100px; color: white; text-align: center\" >\n          </div>\n          ",
+                    "typenode": false,
+                    "inputs": {},
+                    "outputs": {"output_1": {"connections": [], "type": "out"}},
+                    "pos_x": 92,
+                    "pos_y": 337
+                }
+            }
+        };
+        this.load();
     }
 
     clear() {
