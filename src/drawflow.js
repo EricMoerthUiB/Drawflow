@@ -2210,6 +2210,12 @@ export default class Drawflow {
             }
         };
         this.load();
+        this.canvas_x = -92 * this.zoom + 200 * this.zoom;
+        this.canvas_y = -337 * this.zoom + 300 * this.zoom;
+        this.dispatch('translate', {x: this.canvas_x, y: this.canvas_y});
+        // $(document.getElementsByClassName("drawflow"))[0].classList.add("smooth");
+        this.precanvas.style.transform = "translate(" + this.canvas_x + "px, " + this.canvas_y + "px) scale(" + this.zoom + ")";
+        // setTimeout(() => $(document.getElementsByClassName("drawflow"))[0].classList.remove("smooth"), 330);
     }
 
     clear() {
