@@ -1491,10 +1491,14 @@ export default class Drawflow {
             } else {
                 var elems = content.querySelectorAll('[df-' + key[0] + ']');
                 for (var i = 0; i < elems.length; i++) {
+                    if (elems[i].type === "checkbox") {
+                        elems[i].checked = key[1] === "true";
+                        // checkedBehaviour($(elems[i]));
+                    }
                     elems[i].value = key[1];
                 }
             }
-        })
+        });
 
         function insertObjectkeys(object, name, completname) {
             if (object === null) {
