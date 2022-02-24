@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6691ab63-8c87-42d4-9ccf-682f9d4800e0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Drawflow.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Drawflow.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/drawflow.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/drawflow.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/drawflow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawflow.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,6 +97,14 @@
       <workItem from="1629798676719" duration="1213000" />
       <workItem from="1629961428205" duration="2163000" />
       <workItem from="1629984917202" duration="595000" />
+      <workItem from="1644321221482" duration="604000" />
+      <workItem from="1644396126265" duration="141000" />
+      <workItem from="1645451216317" duration="2918000" />
+      <workItem from="1645536064230" duration="34000" />
+      <workItem from="1645723426769" duration="1337000" />
+      <workItem from="1645724812011" duration="27000" />
+      <workItem from="1645724869074" duration="190000" />
+      <workItem from="1645726391315" duration="900000" />
     </task>
     <servers />
   </component>

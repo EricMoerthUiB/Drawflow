@@ -200,7 +200,7 @@ export default class Drawflow {
                 this.ele_selected = e.target.closest(".drawflow_content_node").parentElement.parentElement;
             }
         }
-        if (this.ele_selected.classList[0] === "fas" || this.ele_selected.classList[0] === "far") {// for Icon buttons
+        if (this.ele_selected.classList[0] === "fas" || this.ele_selected.classList[0] === "far" || this.ele_selected.classList[0] === "fa-brands") {// for Icon buttons
             this.ele_selected = this.ele_selected.parentElement;
         }
         // console.log("Clicked Element: " + this.ele_selected.classList[0]);
@@ -327,6 +327,7 @@ export default class Drawflow {
                 var nodeClass = this.getNodeFromId(this.ele_selected.parentElement.id.split(";")[0]).class;
                 // console.log("Class: " + this.ele_selected.children[0].classList[1] + " nodeClass: " + nodeClass);
                 if (this.ele_selected.children[0].classList[1] !== "fa-clone" || this.ele_selected.children[0].classList[1] === "fa-clone" && nodeClass !== "start") {
+                    // console.log(this.ele_selected.children[0].classList[1])
                     switch (this.ele_selected.children[0].classList[1]) {
                         case "fa-image":
                             addNodeToDrawFlowFixedPos("image", x, y);
@@ -337,8 +338,14 @@ export default class Drawflow {
                         case "fa-video":
                             addNodeToDrawFlowFixedPos("video", x, y);
                             break;
+                        case "fa-play":
+                            addNodeToDrawFlowFixedPos("audio", x, y);
+                            break;
                         case "fa-map-marked-alt":
                             addNodeToDrawFlowFixedPos("map", x, y);
+                            break;
+                        case "fa-unity":
+                            addNodeToDrawFlowFixedPos("sketchfab", x, y);
                             break;
                         case "fa-cube":
                             addNodeToDrawFlowFixedPos("volvis", x, y);
@@ -381,6 +388,8 @@ export default class Drawflow {
                     case "fa-video":
                         addNodeToDrawFlowFixedPos("video", x, y);
                         break;
+                    case "fa-play":
+                        addNodeToDrawFlowFixedPos("audio", x, y);
                         break;
                 }
                 this.canvas_x = -x * this.zoom + 600 * this.zoom;
@@ -644,12 +653,18 @@ export default class Drawflow {
                 var video = document.createElement('div');
                 video.classList.add("drawflow-contextMenu-Item");
                 video.innerHTML = "<i class=\"fas fa-video\">";
+                var audio = document.createElement('div');
+                audio.classList.add("drawflow-contextMenu-Item");
+                audio.innerHTML = "<i class=\"fas fa-play\">";
                 var text = document.createElement('div');
                 text.classList.add("drawflow-contextMenu-Item");
                 text.innerHTML = "<i class=\"fas fa-paragraph\"/>";
                 var map = document.createElement('div');
                 map.classList.add("drawflow-contextMenu-Item");
                 map.innerHTML = "<i class=\"fas fa-map-marked-alt\"/>";
+                var sketchfab = document.createElement('div');
+                sketchfab.classList.add("drawflow-contextMenu-Item");
+                sketchfab.innerHTML = "<i class=\"fa-brands fa-unity\"/>";
                 var copy = document.createElement('div');
                 copy.classList.add("drawflow-contextMenu-Item");
                 copy.classList.add("highlight");
@@ -665,8 +680,10 @@ export default class Drawflow {
                 // stop.innerHTML = "<i class=\"fas fa-stop-circle\"/>";
                 contextMenu.appendChild(image);
                 contextMenu.appendChild(video);
+                contextMenu.appendChild(audio);
                 contextMenu.appendChild(text);
                 contextMenu.appendChild(map);
+                contextMenu.appendChild(sketchfab);
                 contextMenu.appendChild(threeD);
                 contextMenu.appendChild(decision);
                 // contextMenu.appendChild(stop);
@@ -692,11 +709,15 @@ export default class Drawflow {
                 var video = document.createElement('div');
                 video.classList.add("drawflow-contextMenuSub-Item");
                 video.innerHTML = "<i class=\"fas fa-video\"/>";
+                var audio = document.createElement('div');
+                audio.classList.add("drawflow-contextMenuSub-Item");
+                audio.innerHTML = "<i class=\"fas fa-play\"/>";
                 var subtext = document.createElement('div');
                 subtext.classList.add("drawflow-contextMenuSub-Item");
                 subtext.innerHTML = "<i class=\"fas fa-paragraph\"/>";
                 contextMenu.appendChild(image);
                 contextMenu.appendChild(video);
+                contextMenu.appendChild(audio);
                 contextMenu.appendChild(subtext);
                 if (this.node_selected) {
                     this.node_selected.appendChild(contextMenu);
@@ -2213,6 +2234,18 @@ export default class Drawflow {
                 }
             }
         };
+        this.load();
+        this.canvas_x = -92 * this.zoom + 200 * this.zoom;
+        this.canvas_y = -337 * this.zoom + 300 * this.zoom;
+        this.dispatch('translate', {x: this.canvas_x, y: this.canvas_y});
+        // $(document.getElementsByClassName("drawflow"))[0].classList.add("smooth");
+        this.precanvas.style.transform = "translate(" + this.canvas_x + "px, " + this.canvas_y + "px) scale(" + this.zoom + ")";
+        // setTimeout(() => $(document.getElementsByClassName("drawflow"))[0].classList.remove("smooth"), 330);
+    }
+
+    clearModuleSelectedAndLoad(data) {
+        this.precanvas.innerHTML = "";
+        this.drawflow.drawflow[this.module] = data;
         this.load();
         this.canvas_x = -92 * this.zoom + 200 * this.zoom;
         this.canvas_y = -337 * this.zoom + 300 * this.zoom;
