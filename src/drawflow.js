@@ -338,9 +338,6 @@ export default class Drawflow {
                         case "fa-video":
                             addNodeToDrawFlowFixedPos("video", x, y);
                             break;
-                        case "fa-play":
-                            addNodeToDrawFlowFixedPos("audio", x, y);
-                            break;
                         case "fa-map-marked-alt":
                             addNodeToDrawFlowFixedPos("map", x, y);
                             break;
@@ -390,6 +387,7 @@ export default class Drawflow {
                         break;
                     case "fa-play":
                         addNodeToDrawFlowFixedPos("audio", x, y);
+                        connection = "output_1";
                         break;
                 }
                 this.canvas_x = -x * this.zoom + 600 * this.zoom;
@@ -653,9 +651,9 @@ export default class Drawflow {
                 var video = document.createElement('div');
                 video.classList.add("drawflow-contextMenu-Item");
                 video.innerHTML = "<i class=\"fas fa-video\">";
-                var audio = document.createElement('div');
-                audio.classList.add("drawflow-contextMenu-Item");
-                audio.innerHTML = "<i class=\"fas fa-play\">";
+                // var audio = document.createElement('div');
+                // audio.classList.add("drawflow-contextMenu-Item");
+                // audio.innerHTML = "<i class=\"fas fa-play\">";
                 var text = document.createElement('div');
                 text.classList.add("drawflow-contextMenu-Item");
                 text.innerHTML = "<i class=\"fas fa-paragraph\"/>";
@@ -680,7 +678,7 @@ export default class Drawflow {
                 // stop.innerHTML = "<i class=\"fas fa-stop-circle\"/>";
                 contextMenu.appendChild(image);
                 contextMenu.appendChild(video);
-                contextMenu.appendChild(audio);
+                // contextMenu.appendChild(audio);
                 contextMenu.appendChild(text);
                 contextMenu.appendChild(map);
                 contextMenu.appendChild(sketchfab);
